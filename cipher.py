@@ -54,3 +54,10 @@ def decrypt(chipher: object, cryptoText: str, byteMode: bool=False) -> str:
     else:
         plaintext = chipher.decrypt(cryptoText).decode()
     return plaintext
+
+# TODO: Lisää jossain vaiheessa funktiot, jotka ottavat parametriksi vain avaimen ja tekstin
+
+if __name__ == "__main__":
+    
+    secretKey = newKey()
+    print(secretKey)
