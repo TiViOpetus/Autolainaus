@@ -39,6 +39,7 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setBold(False)
         self.tabWidget.setFont(font)
+        self.tabWidget.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.tabWidget.setLocale(QLocale(QLocale.Finnish, QLocale.Finland))
         self.studentTab = QWidget()
         self.studentTab.setObjectName(u"studentTab")

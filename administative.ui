@@ -29,6 +29,9 @@
       <bold>false</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="locale">
      <locale language="Finnish" country="Finland"/>
     </property>
