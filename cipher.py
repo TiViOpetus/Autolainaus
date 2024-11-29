@@ -1,10 +1,10 @@
-# MODUULI SALAUAVAINTEN JA FERNET-SALAUKSEEN JA SEN PURKAMISEEN
-# =============================================================
+# MODUULI SALAUSAVAINTEN JA FRENET-SALAUKSEEN JA SEN PURKAMISEEN
+# ==============================================================
 
 # KIRJASTOJEN JA MODUULIEN LATAUKSET
 from cryptography.fernet import Fernet
 
-def newKey() -> str: 
+def newKey() -> str:
     """Creates a new key for encrypting and decrypting messages
 
     Returns:
@@ -25,7 +25,7 @@ def createChipher(key: str) -> object:
     chipher = Fernet(key)
     return chipher
 
-def encrypt(chipher: object, plainText: str) -> str:
+def encrypt(chipher, plainText):
     """Encrypts a message usinf Fernet algorithm
 
     Args:
@@ -38,7 +38,7 @@ def encrypt(chipher: object, plainText: str) -> str:
     cryptoText = chipher.encrypt(plainText)
     return cryptoText
 
-def decrypt(chipher: object, cryptoText: str, byteMode: bool=False) -> str:
+def decrypt(chipher, cryptoText, byteMode=False):
     """Decrypts a message
 
     Args:
@@ -58,6 +58,5 @@ def decrypt(chipher: object, cryptoText: str, byteMode: bool=False) -> str:
 # TODO: Lisää jossain vaiheessa funktiot, jotka ottavat parametriksi vain avaimen ja tekstin
 
 if __name__ == "__main__":
-    
     secretKey = newKey()
     print(secretKey)
