@@ -42,6 +42,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setLocale(QLocale(QLocale.Finnish, QLocale.Finland))
         self.studentTab = QWidget()
         self.studentTab.setObjectName(u"studentTab")
+        self.studentTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.registerdPersonCatalogTableWidget = QTableWidget(self.studentTab)
         if (self.registerdPersonCatalogTableWidget.columnCount() < 5):
             self.registerdPersonCatalogTableWidget.setColumnCount(5)
@@ -147,6 +148,7 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.studentTab, "")
         self.vehicleTab = QWidget()
         self.vehicleTab.setObjectName(u"vehicleTab")
+        self.vehicleTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.vehicleListLabel = QLabel(self.vehicleTab)
         self.vehicleListLabel.setObjectName(u"vehicleListLabel")
         self.vehicleListLabel.setGeometry(QRect(20, 220, 71, 16))
@@ -250,6 +252,7 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.vehicleTab, "")
         self.raportsTab = QWidget()
         self.raportsTab.setObjectName(u"raportsTab")
+        self.raportsTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.reportTypeComboBox = QComboBox(self.raportsTab)
         self.reportTypeComboBox.setObjectName(u"reportTypeComboBox")
         self.reportTypeComboBox.setGeometry(QRect(10, 50, 231, 22))
@@ -318,7 +321,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

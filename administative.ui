@@ -33,9 +33,12 @@
      <locale language="Finnish" country="Finland"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="studentTab">
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
      <attribute name="title">
       <string>Lainaajat</string>
      </attribute>
@@ -271,6 +274,9 @@ color: rgb(255, 255, 255);</string>
      </widget>
     </widget>
     <widget class="QWidget" name="vehicleTab">
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
      <attribute name="title">
       <string>Autot</string>
      </attribute>
@@ -533,6 +539,9 @@ color: rgb(255, 255, 255);</string>
      </widget>
     </widget>
     <widget class="QWidget" name="raportsTab">
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
      <attribute name="title">
       <string>Raportit</string>
      </attribute>
