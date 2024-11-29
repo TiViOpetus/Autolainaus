@@ -76,4 +76,3 @@ print('Salatussa muodossa:', encryptedPassword)
 decryptedPassword = chipher.decrypt(encryptedPassword)
 
 print('Salaus purettuna salasana on', decryptedPassword)
-.
