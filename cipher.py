@@ -60,3 +60,5 @@ def decrypt(chipher, cryptoText, byteMode=False):
 if __name__ == "__main__":
     secretKey = newKey()
     print(secretKey)
+
+    
