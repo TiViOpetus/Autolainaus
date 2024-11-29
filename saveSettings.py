@@ -121,5 +121,5 @@ if __name__ == "__main__":
 
     # Käynistetään sovellus ja tapahtumienkäsittelijä
     app.exec()
-
+.
     
