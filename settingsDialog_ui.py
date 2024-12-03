@@ -110,9 +110,6 @@ class Ui_Dialog(object):
         self.saveSettingsPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.saveSettingsPushButton.setStyleSheet(u"background-color: rgb(55, 154, 220);\n"
 "color: rgb(255, 255, 255);")
-        self.label = QLabel(Dialog)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(60, 170, 47, 13))
 
         self.retranslateUi(Dialog)
 
@@ -145,6 +142,5 @@ class Ui_Dialog(object):
         self.saveSettingsPushButton.setToolTip(QCoreApplication.translate("Dialog", u"Tallenna asetukset tiedostoon", None))
 #endif // QT_CONFIG(tooltip)
         self.saveSettingsPushButton.setText(QCoreApplication.translate("Dialog", u"Tallenna", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"TextLabel", None))
     # retranslateUi
 
