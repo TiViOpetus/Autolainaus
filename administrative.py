@@ -53,7 +53,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.saveSettingsDialog.exec()
         
 
-    # Avataan MessageBox
+    # Malli mahdollista virheilmoitusta varten
     def openWarning(self):
         msgBox = QtWidgets.QMessageBox()
         msgBox.setIcon(QtWidgets.QMessageBox.Critical)
