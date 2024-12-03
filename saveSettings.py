@@ -11,7 +11,7 @@ import json # JSON-muutokset
 from PySide6 import QtWidgets #Qt-vimpaimet
 from saveSettings_ui import Ui_MainWindow # Käänetyn käyttöliitymän luokka
 
-import cihper # DIY moduuli salaukseen, kättää Fernet-salauksen
+import cipher # DIY moduuli salaukseen, kättää Fernet-salauksen
 
 # Märitellään luokka, joka perii QMainWindow- ja UI_MainWindow luokan
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -33,7 +33,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Avainta ei saa vaihtaa ohjelman käyttöönoton jälkeen!
         # Avain on luotu cihper.py
         self.secretKey = b'GmlZx2AOC33VmHKzW4becNudTW4wfQhEWN5LKnxqA68='
-        self.cryptoEngine = cihper.createChipher(self.secretKey)
+        self.cryptoEngine = cipher.createChipher(self.secretKey)
 
        
         # Luetaan asetustiedosto Python-sanakirjaksi
@@ -79,9 +79,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         planeTextPassword = bytes(self.ui.passwordLineEdit.text(), 'utf-8')
 
         # Salataan ja muutetaan tavaliseksi merkkijonoksi, jotta JSON-tallenus onnistuisi
-        encryptedPassword = str(cihper.encrypt(self.cryptoEngine, planeTextPassword))
+        encryptedPassword = str(cipher.encrypt(self.cryptoEngine, planeTextPassword))
 
-        # TODO: Lisää tähän salasanan kryptaus 
         # Muodostetaan muuttujista Python-sanakirja
         settingsDictionary = {
             'server': server,
