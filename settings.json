@@ -1,1 +1,1 @@
-{"server": "127.0.0.1", "port": "5432", "database": "autolainaus", "userName": "autolainaus", "password": "b'gAAAAABnSCw6YPMz_uunoCRPS5tjjwH7FaHfZ9ymRCyhLIMfIPa06PdRJtwJTYoUMbgWMm5cINqty1hL6JSOh0YW_aUSRhFzOA=='"}
+{"server": "127.0.0.1", "port": "5432", "database": "autolainaus", "userName": "postgres", "password": "b'gAAAAABnTsoewzX_X2A6-MylTujcQbLP23EQK5WKRk6t0DOy4A3AIKR2V7uPH-Oz8Lun68aqZEoiEoGr6u277mZJC8igIjWUOg=='"}

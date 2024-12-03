@@ -555,14 +555,14 @@ color: rgb(255, 255, 255);</string>
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="groupTab">
      <property name="cursor">
       <cursorShape>ArrowCursor</cursorShape>
      </property>
      <attribute name="title">
       <string>Ryhmät</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="saveGroupPushButton">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -586,7 +586,7 @@ color: rgb(255, 255, 255);</string>
        <string>Tallenna</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="groupsTableWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -624,7 +624,7 @@ color: rgb(255, 255, 255);</string>
       <column/>
       <column/>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="storedGroupsLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -655,7 +655,7 @@ color: rgb(255, 255, 255);</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="groupNameLineEdit">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -666,7 +666,7 @@ color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="responsiblePersonLineEdit">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -689,7 +689,7 @@ color: rgb(255, 255, 255);</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="groupNameLabel">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -703,7 +703,7 @@ color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="responsiblePersonLabel">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -779,6 +779,9 @@ color: rgb(255, 255, 255);</string>
         <bold>false</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
       <property name="locale">
        <locale language="Finnish" country="Finland"/>
       </property>
@@ -851,6 +854,9 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="locale">
        <locale language="Finnish" country="Finland"/>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
       </property>
       <property name="date">
        <date>
@@ -987,10 +993,16 @@ color: rgb(255, 255, 255);</string>
    <property name="text">
     <string>Muokkaa...</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+A</string>
+   </property>
   </action>
   <action name="actionTietoja_ohjelmasta">
    <property name="text">
     <string>Tietoja ohjelmasta...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+T</string>
    </property>
   </action>
  </widget>
