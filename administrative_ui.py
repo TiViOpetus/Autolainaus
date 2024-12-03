@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'administative.ui'
+## Form generated from reading UI file 'administrative.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -71,13 +71,13 @@ class Ui_MainWindow(object):
         self.savePrersonPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.savePrersonPushButton.setStyleSheet(u"background-color: rgb(55, 154, 220);\n"
 "color: rgb(255, 255, 255);")
-        self.widget = QWidget(self.studentTab)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(110, 10, 181, 151))
-        self.studentInputsLayout = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.studentTab)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(110, 10, 181, 151))
+        self.studentInputsLayout = QVBoxLayout(self.layoutWidget)
         self.studentInputsLayout.setObjectName(u"studentInputsLayout")
         self.studentInputsLayout.setContentsMargins(0, 0, 0, 0)
-        self.ssnLineEdit = QLineEdit(self.widget)
+        self.ssnLineEdit = QLineEdit(self.layoutWidget)
         self.ssnLineEdit.setObjectName(u"ssnLineEdit")
         font3 = QFont()
         font3.setPointSize(11)
@@ -86,61 +86,61 @@ class Ui_MainWindow(object):
 
         self.studentInputsLayout.addWidget(self.ssnLineEdit)
 
-        self.firstNameLineEdit = QLineEdit(self.widget)
+        self.firstNameLineEdit = QLineEdit(self.layoutWidget)
         self.firstNameLineEdit.setObjectName(u"firstNameLineEdit")
         self.firstNameLineEdit.setFont(font3)
 
         self.studentInputsLayout.addWidget(self.firstNameLineEdit)
 
-        self.lastNameLineEdit = QLineEdit(self.widget)
+        self.lastNameLineEdit = QLineEdit(self.layoutWidget)
         self.lastNameLineEdit.setObjectName(u"lastNameLineEdit")
         self.lastNameLineEdit.setFont(font3)
 
         self.studentInputsLayout.addWidget(self.lastNameLineEdit)
 
-        self.groupComboBox = QComboBox(self.widget)
+        self.groupComboBox = QComboBox(self.layoutWidget)
         self.groupComboBox.setObjectName(u"groupComboBox")
         self.groupComboBox.setFont(font3)
 
         self.studentInputsLayout.addWidget(self.groupComboBox)
 
-        self.veachelClassLineEdit = QLineEdit(self.widget)
+        self.veachelClassLineEdit = QLineEdit(self.layoutWidget)
         self.veachelClassLineEdit.setObjectName(u"veachelClassLineEdit")
         self.veachelClassLineEdit.setFont(font3)
 
         self.studentInputsLayout.addWidget(self.veachelClassLineEdit)
 
-        self.widget1 = QWidget(self.studentTab)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(10, 10, 105, 151))
-        self.studetsLabelVerticalLayout = QVBoxLayout(self.widget1)
+        self.layoutWidget1 = QWidget(self.studentTab)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(10, 10, 105, 151))
+        self.studetsLabelVerticalLayout = QVBoxLayout(self.layoutWidget1)
         self.studetsLabelVerticalLayout.setObjectName(u"studetsLabelVerticalLayout")
         self.studetsLabelVerticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.ssnLabel = QLabel(self.widget1)
+        self.ssnLabel = QLabel(self.layoutWidget1)
         self.ssnLabel.setObjectName(u"ssnLabel")
         self.ssnLabel.setFont(font1)
 
         self.studetsLabelVerticalLayout.addWidget(self.ssnLabel)
 
-        self.firstNameLabel = QLabel(self.widget1)
+        self.firstNameLabel = QLabel(self.layoutWidget1)
         self.firstNameLabel.setObjectName(u"firstNameLabel")
         self.firstNameLabel.setFont(font1)
 
         self.studetsLabelVerticalLayout.addWidget(self.firstNameLabel)
 
-        self.lastNameLabel = QLabel(self.widget1)
+        self.lastNameLabel = QLabel(self.layoutWidget1)
         self.lastNameLabel.setObjectName(u"lastNameLabel")
         self.lastNameLabel.setFont(font1)
 
         self.studetsLabelVerticalLayout.addWidget(self.lastNameLabel)
 
-        self.groupLabel = QLabel(self.widget1)
+        self.groupLabel = QLabel(self.layoutWidget1)
         self.groupLabel.setObjectName(u"groupLabel")
         self.groupLabel.setFont(font1)
 
         self.studetsLabelVerticalLayout.addWidget(self.groupLabel)
 
-        self.veachelClassLabel = QLabel(self.widget1)
+        self.veachelClassLabel = QLabel(self.layoutWidget1)
         self.veachelClassLabel.setObjectName(u"veachelClassLabel")
         self.veachelClassLabel.setFont(font1)
 
@@ -178,73 +178,73 @@ class Ui_MainWindow(object):
         self.savePrersonPushButton_3.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.savePrersonPushButton_3.setStyleSheet(u"background-color: rgb(217, 145, 0);\n"
 "color: rgb(255, 255, 255);")
-        self.widget2 = QWidget(self.vehicleTab)
-        self.widget2.setObjectName(u"widget2")
-        self.widget2.setGeometry(QRect(140, 10, 169, 146))
-        self.veachelInputsVerticalLayout = QVBoxLayout(self.widget2)
+        self.layoutWidget2 = QWidget(self.vehicleTab)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(140, 10, 169, 146))
+        self.veachelInputsVerticalLayout = QVBoxLayout(self.layoutWidget2)
         self.veachelInputsVerticalLayout.setObjectName(u"veachelInputsVerticalLayout")
         self.veachelInputsVerticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.numberPlateLineEdit = QLineEdit(self.widget2)
+        self.numberPlateLineEdit = QLineEdit(self.layoutWidget2)
         self.numberPlateLineEdit.setObjectName(u"numberPlateLineEdit")
         self.numberPlateLineEdit.setFont(font3)
 
         self.veachelInputsVerticalLayout.addWidget(self.numberPlateLineEdit)
 
-        self.manifacturetLineEdit = QLineEdit(self.widget2)
+        self.manifacturetLineEdit = QLineEdit(self.layoutWidget2)
         self.manifacturetLineEdit.setObjectName(u"manifacturetLineEdit")
         self.manifacturetLineEdit.setFont(font3)
 
         self.veachelInputsVerticalLayout.addWidget(self.manifacturetLineEdit)
 
-        self.modelLineEdit = QLineEdit(self.widget2)
+        self.modelLineEdit = QLineEdit(self.layoutWidget2)
         self.modelLineEdit.setObjectName(u"modelLineEdit")
         self.modelLineEdit.setFont(font3)
 
         self.veachelInputsVerticalLayout.addWidget(self.modelLineEdit)
 
-        self.modelYearLineEdit = QLineEdit(self.widget2)
+        self.modelYearLineEdit = QLineEdit(self.layoutWidget2)
         self.modelYearLineEdit.setObjectName(u"modelYearLineEdit")
         self.modelYearLineEdit.setFont(font3)
 
         self.veachelInputsVerticalLayout.addWidget(self.modelYearLineEdit)
 
-        self.capiacityLineEdit = QLineEdit(self.widget2)
+        self.capiacityLineEdit = QLineEdit(self.layoutWidget2)
         self.capiacityLineEdit.setObjectName(u"capiacityLineEdit")
         self.capiacityLineEdit.setFont(font3)
 
         self.veachelInputsVerticalLayout.addWidget(self.capiacityLineEdit)
 
-        self.widget3 = QWidget(self.vehicleTab)
-        self.widget3.setObjectName(u"widget3")
-        self.widget3.setGeometry(QRect(30, 10, 108, 151))
-        self.veachleLabelVerticalLayout = QVBoxLayout(self.widget3)
+        self.layoutWidget3 = QWidget(self.vehicleTab)
+        self.layoutWidget3.setObjectName(u"layoutWidget3")
+        self.layoutWidget3.setGeometry(QRect(30, 10, 108, 151))
+        self.veachleLabelVerticalLayout = QVBoxLayout(self.layoutWidget3)
         self.veachleLabelVerticalLayout.setObjectName(u"veachleLabelVerticalLayout")
         self.veachleLabelVerticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.numberPlateLabel = QLabel(self.widget3)
+        self.numberPlateLabel = QLabel(self.layoutWidget3)
         self.numberPlateLabel.setObjectName(u"numberPlateLabel")
         self.numberPlateLabel.setFont(font1)
 
         self.veachleLabelVerticalLayout.addWidget(self.numberPlateLabel)
 
-        self.manifacturetLabel = QLabel(self.widget3)
+        self.manifacturetLabel = QLabel(self.layoutWidget3)
         self.manifacturetLabel.setObjectName(u"manifacturetLabel")
         self.manifacturetLabel.setFont(font1)
 
         self.veachleLabelVerticalLayout.addWidget(self.manifacturetLabel)
 
-        self.modelLabel = QLabel(self.widget3)
+        self.modelLabel = QLabel(self.layoutWidget3)
         self.modelLabel.setObjectName(u"modelLabel")
         self.modelLabel.setFont(font1)
 
         self.veachleLabelVerticalLayout.addWidget(self.modelLabel)
 
-        self.modelYearLabel = QLabel(self.widget3)
+        self.modelYearLabel = QLabel(self.layoutWidget3)
         self.modelYearLabel.setObjectName(u"modelYearLabel")
         self.modelYearLabel.setFont(font1)
 
         self.veachleLabelVerticalLayout.addWidget(self.modelYearLabel)
 
-        self.capiacityLabel = QLabel(self.widget3)
+        self.capiacityLabel = QLabel(self.layoutWidget3)
         self.capiacityLabel.setObjectName(u"capiacityLabel")
         self.capiacityLabel.setFont(font1)
 

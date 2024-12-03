@@ -8,7 +8,7 @@ import os # Polkumääräykset
 import sys # Käynistysargumentit
 
 from PySide6 import QtWidgets #Qt-vimpaimet
-from administative_ui import Ui_MainWindow # Käänetyn käyttöliitymän luokka
+from administrative_ui import Ui_MainWindow # Käänetyn käyttöliitymän luokka
 
 # Märitellään luokka, joka perii QMainWindow- ja UI_MainWindow luokan
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
