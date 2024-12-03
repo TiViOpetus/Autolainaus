@@ -107,6 +107,7 @@ class Ui_Dialog(object):
         font2.setPointSize(10)
         font2.setBold(True)
         self.saveSettingsPushButton.setFont(font2)
+        self.saveSettingsPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.saveSettingsPushButton.setStyleSheet(u"background-color: rgb(55, 154, 220);\n"
 "color: rgb(255, 255, 255);")
 
@@ -138,7 +139,7 @@ class Ui_Dialog(object):
         self.passwordLineEdit.setToolTip(QCoreApplication.translate("Dialog", u"<html><head/><body><p><span style=\" font-size:10pt;\">Salasana</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        self.saveSettingsPushButton.setToolTip(QCoreApplication.translate("Dialog", u"Tallenna asetukset", None))
+        self.saveSettingsPushButton.setToolTip(QCoreApplication.translate("Dialog", u"Tallenna asetukset tiedostoon", None))
 #endif // QT_CONFIG(tooltip)
         self.saveSettingsPushButton.setText(QCoreApplication.translate("Dialog", u"Tallenna", None))
     # retranslateUi

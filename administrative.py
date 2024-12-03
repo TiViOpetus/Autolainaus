@@ -134,6 +134,7 @@ class SaveSettingsDialog(QtWidgets.QDialog, Ui_Dialog):
         }
 
         # Muunnetaan sanakirja JSON-muotoon
+        # TODO: Yksinkertaista muuttamalla json.dump-metodia käytetäväksi
         jsonData = json.dumps(settingsDictionary)
         
         # Avataan asetustiedosto ja kirjoitetaan asetukset

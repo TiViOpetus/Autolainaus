@@ -176,8 +176,11 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="toolTip">
-    <string>Tallenna asetukset</string>
+    <string>Tallenna asetukset tiedostoon</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(55, 154, 220);
