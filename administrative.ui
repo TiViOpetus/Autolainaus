@@ -7,11 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-<<<<<<< HEAD
-    <height>655</height>
-=======
     <height>600</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,26 +19,6 @@
      <rect>
       <x>0</x>
       <y>0</y>
-<<<<<<< HEAD
-      <width>791</width>
-      <height>601</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="locale">
-     <locale language="Finnish" country="Finland"/>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-=======
       <width>783</width>
       <height>551</height>
      </rect>
@@ -52,7 +28,6 @@
     </property>
     <property name="currentIndex">
      <number>2</number>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
     </property>
     <widget class="QWidget" name="studentTab">
      <property name="cursor">
@@ -61,24 +36,6 @@
      <attribute name="title">
       <string>Lainaajat</string>
      </attribute>
-<<<<<<< HEAD
-     <widget class="QTableWidget" name="registerdPersonCatalogTableWidget">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>240</y>
-        <width>531</width>
-        <height>331</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-=======
      <widget class="QTableWidget" name="registeredPersonsTableWidget">
       <property name="geometry">
        <rect>
@@ -88,7 +45,6 @@
         <height>321</height>
        </rect>
       </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="cursor" stdset="0">
        <cursorShape>ForbiddenCursor</cursorShape>
       </property>
@@ -114,24 +70,6 @@
       <column/>
       <column/>
      </widget>
-<<<<<<< HEAD
-     <widget class="QLabel" name="registerdPersonsLabel">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>210</y>
-        <width>141</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-=======
      <widget class="QLabel" name="registeredPersonsLabel">
       <property name="geometry">
        <rect>
@@ -141,34 +79,21 @@
         <height>16</height>
        </rect>
       </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="text">
        <string>Rekisteröidyt lainaajat</string>
       </property>
      </widget>
-<<<<<<< HEAD
-     <widget class="QPushButton" name="savePrersonPushButton">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>140</y>
-=======
      <widget class="QPushButton" name="savePersonPushButton">
       <property name="geometry">
        <rect>
         <x>310</x>
         <y>130</y>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <width>71</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-<<<<<<< HEAD
-        <pointsize>10</pointsize>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -177,29 +102,13 @@
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
-<<<<<<< HEAD
-       <string notr="true">background-color: rgb(55, 154, 220);
-=======
        <string notr="true">background-color: rgb(57, 136, 220);
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Tallenna</string>
       </property>
      </widget>
-<<<<<<< HEAD
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>10</y>
-        <width>181</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="studentInputsLayout">
-=======
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
@@ -210,17 +119,11 @@ color: rgb(255, 255, 255);</string>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="studentInputsVerticalLayout">
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        <item>
         <widget class="QLineEdit" name="ssnLineEdit">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
         </widget>
@@ -230,11 +133,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>11</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
         </widget>
@@ -244,11 +142,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>11</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
         </widget>
@@ -258,47 +151,21 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>11</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
         </widget>
        </item>
        <item>
-<<<<<<< HEAD
-        <widget class="QLineEdit" name="veachelClassLineEdit">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-=======
         <widget class="QLineEdit" name="vehicleClassLineEdit">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
-<<<<<<< HEAD
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>105</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="studetsLabelVerticalLayout">
-=======
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
@@ -309,17 +176,11 @@ color: rgb(255, 255, 255);</string>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="studentLabelsVerticalLayout">
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        <item>
         <widget class="QLabel" name="ssnLabel">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
          <property name="text">
@@ -332,11 +193,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>10</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
          <property name="text">
@@ -349,11 +205,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>10</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
          <property name="text">
@@ -366,11 +217,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>10</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
          <property name="text">
@@ -379,19 +225,10 @@ color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item>
-<<<<<<< HEAD
-        <widget class="QLabel" name="veachelClassLabel">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-=======
         <widget class="QLabel" name="vehicleClassLabel">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
          <property name="text">
@@ -409,15 +246,6 @@ color: rgb(255, 255, 255);</string>
      <attribute name="title">
       <string>Autot</string>
      </attribute>
-<<<<<<< HEAD
-     <widget class="QLabel" name="vehicleListLabel">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>220</y>
-        <width>71</width>
-        <height>16</height>
-=======
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
@@ -554,20 +382,10 @@ color: rgb(255, 255, 255);</string>
         <y>120</y>
         <width>91</width>
         <height>23</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </rect>
       </property>
       <property name="font">
        <font>
-<<<<<<< HEAD
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Autoluettelo</string>
-=======
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -607,34 +425,17 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Viivakoodi</string>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       </property>
      </widget>
      <widget class="QTableWidget" name="vehicleCatalogTableWidget">
       <property name="geometry">
        <rect>
-<<<<<<< HEAD
-        <x>20</x>
-        <y>240</y>
-        <width>531</width>
-        <height>331</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-=======
         <x>10</x>
         <y>190</y>
         <width>601</width>
         <height>321</height>
        </rect>
       </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="cursor" stdset="0">
        <cursorShape>ForbiddenCursor</cursorShape>
       </property>
@@ -660,225 +461,6 @@ color: rgb(255, 255, 255);</string>
       <column/>
       <column/>
      </widget>
-<<<<<<< HEAD
-     <widget class="QPushButton" name="savePrersonPushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>130</y>
-        <width>81</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(55, 154, 220);
-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>Tallenna</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="savePrersonPushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>100</y>
-        <width>81</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(217, 145, 0);
-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>Viivakoodi</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>10</y>
-        <width>169</width>
-        <height>146</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="veachelInputsVerticalLayout">
-       <item>
-        <widget class="QLineEdit" name="numberPlateLineEdit">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="manifacturetLineEdit">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="modelLineEdit">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="modelYearLineEdit">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="capiacityLineEdit">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>10</y>
-        <width>108</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="veachleLabelVerticalLayout">
-       <item>
-        <widget class="QLabel" name="numberPlateLabel">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Rekisterinumero</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="manifacturetLabel">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Merkki</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="modelLabel">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Malli</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="modelYearLabel">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Vuosimalli</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="capiacityLabel">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Henkilömäärä</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="groupTab">
-     <property name="cursor">
-      <cursorShape>ArrowCursor</cursorShape>
-     </property>
-     <attribute name="title">
-      <string>Ryhmät</string>
-     </attribute>
-     <widget class="QPushButton" name="saveGroupPushButton">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>40</y>
-        <width>75</width>
-=======
      <widget class="QLabel" name="vehicleListLabel">
       <property name="geometry">
        <rect>
@@ -903,41 +485,23 @@ color: rgb(255, 255, 255);</string>
         <x>300</x>
         <y>50</y>
         <width>81</width>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-<<<<<<< HEAD
-        <pointsize>10</pointsize>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-<<<<<<< HEAD
-       <string notr="true">background-color: rgb(55, 154, 220);
-=======
        <string notr="true">background-color: rgb(57, 136, 220);
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Tallenna</string>
       </property>
      </widget>
-<<<<<<< HEAD
-     <widget class="QTableWidget" name="groupsTableWidget">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>120</y>
-        <width>241</width>
-        <height>331</height>
-=======
      <widget class="QTableWidget" name="tableWidget_2">
       <property name="geometry">
        <rect>
@@ -945,24 +509,13 @@ color: rgb(255, 255, 255);</string>
         <y>120</y>
         <width>351</width>
         <height>192</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </rect>
       </property>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-<<<<<<< HEAD
-        <weight>50</weight>
-        <bold>false</bold>
        </font>
       </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>ForbiddenCursor</cursorShape>
-      </property>
-=======
-       </font>
-      </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="rowCount">
        <number>10</number>
       </property>
@@ -985,30 +538,6 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="storedGroupsLabel">
       <property name="geometry">
        <rect>
-<<<<<<< HEAD
-        <x>20</x>
-        <y>100</y>
-        <width>121</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Tallenetut ryhmät</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>10</y>
-=======
         <x>30</x>
         <y>100</y>
         <width>101</width>
@@ -1024,7 +553,6 @@ color: rgb(255, 255, 255);</string>
        <rect>
         <x>120</x>
         <y>20</y>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <width>169</width>
         <height>56</height>
        </rect>
@@ -1035,11 +563,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>11</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
         </widget>
@@ -1049,26 +572,12 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>11</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
-<<<<<<< HEAD
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>81</width>
-        <height>61</height>
-=======
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
@@ -1076,7 +585,6 @@ color: rgb(255, 255, 255);</string>
         <y>20</y>
         <width>84</width>
         <height>51</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1085,11 +593,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>10</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
          <property name="text">
@@ -1102,11 +605,6 @@ color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <pointsize>10</pointsize>
-<<<<<<< HEAD
-           <weight>50</weight>
-           <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
           </font>
          </property>
          <property name="text">
@@ -1117,30 +615,18 @@ color: rgb(255, 255, 255);</string>
       </layout>
      </widget>
     </widget>
-<<<<<<< HEAD
-    <widget class="QWidget" name="raportsTab">
-=======
     <widget class="QWidget" name="reportsTab">
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
      <property name="cursor">
       <cursorShape>ArrowCursor</cursorShape>
      </property>
      <attribute name="title">
       <string>Raportit</string>
      </attribute>
-<<<<<<< HEAD
-     <widget class="QComboBox" name="reportTypeComboBox">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>50</y>
-=======
      <widget class="QComboBox" name="reportTypecomboBox">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>30</y>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <width>231</width>
         <height>22</height>
        </rect>
@@ -1148,57 +634,32 @@ color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-<<<<<<< HEAD
-        <weight>50</weight>
-        <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </font>
       </property>
      </widget>
      <widget class="QLabel" name="reportTypeLabel">
       <property name="geometry">
        <rect>
-<<<<<<< HEAD
-        <x>10</x>
-        <y>20</y>
-        <width>61</width>
-        <height>21</height>
-=======
         <x>20</x>
         <y>10</y>
         <width>47</width>
         <height>13</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </rect>
       </property>
       <property name="font">
        <font>
         <pointsize>10</pointsize>
-<<<<<<< HEAD
-        <weight>50</weight>
-        <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </font>
       </property>
       <property name="text">
        <string>Raportti</string>
       </property>
      </widget>
-<<<<<<< HEAD
-     <widget class="QDateEdit" name="beginigDateEdit">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>110</y>
-=======
      <widget class="QDateEdit" name="beginingDateEdit">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>80</y>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <width>110</width>
         <height>22</height>
        </rect>
@@ -1206,21 +667,8 @@ color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-<<<<<<< HEAD
-        <weight>50</weight>
-        <bold>false</bold>
        </font>
       </property>
-      <property name="cursor">
-       <cursorShape>IBeamCursor</cursorShape>
-      </property>
-      <property name="locale">
-       <locale language="Finnish" country="Finland"/>
-      </property>
-=======
-       </font>
-      </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="calendarPopup">
        <bool>true</bool>
       </property>
@@ -1232,19 +680,11 @@ color: rgb(255, 255, 255);</string>
        </date>
       </property>
      </widget>
-<<<<<<< HEAD
-     <widget class="QLabel" name="beginigLabel">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>90</y>
-=======
      <widget class="QLabel" name="beginingLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>60</y>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <width>47</width>
         <height>13</height>
        </rect>
@@ -1252,11 +692,6 @@ color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <pointsize>10</pointsize>
-<<<<<<< HEAD
-        <weight>50</weight>
-        <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </font>
       </property>
       <property name="text">
@@ -1266,13 +701,8 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="endingLabel">
       <property name="geometry">
        <rect>
-<<<<<<< HEAD
-        <x>130</x>
-        <y>90</y>
-=======
         <x>140</x>
         <y>60</y>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <width>47</width>
         <height>13</height>
        </rect>
@@ -1280,11 +710,6 @@ color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <pointsize>10</pointsize>
-<<<<<<< HEAD
-        <weight>50</weight>
-        <bold>false</bold>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </font>
       </property>
       <property name="text">
@@ -1294,13 +719,8 @@ color: rgb(255, 255, 255);</string>
      <widget class="QDateEdit" name="endingDateEdit">
       <property name="geometry">
        <rect>
-<<<<<<< HEAD
-        <x>130</x>
-        <y>110</y>
-=======
         <x>140</x>
         <y>80</y>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
         <width>110</width>
         <height>22</height>
        </rect>
@@ -1308,18 +728,8 @@ color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-<<<<<<< HEAD
-        <weight>50</weight>
-        <bold>false</bold>
        </font>
       </property>
-      <property name="locale">
-       <locale language="Finnish" country="Finland"/>
-      </property>
-=======
-       </font>
-      </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="calendarPopup">
        <bool>true</bool>
       </property>
@@ -1331,15 +741,6 @@ color: rgb(255, 255, 255);</string>
        </date>
       </property>
      </widget>
-<<<<<<< HEAD
-     <widget class="QTableWidget" name="reportTableWidget">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>190</y>
-        <width>641</width>
-        <height>351</height>
-=======
      <widget class="QPushButton" name="printReportPushButton">
       <property name="geometry">
        <rect>
@@ -1347,18 +748,10 @@ color: rgb(255, 255, 255);</string>
         <y>80</y>
         <width>61</width>
         <height>23</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
        </rect>
       </property>
       <property name="font">
        <font>
-<<<<<<< HEAD
-        <pointsize>11</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-=======
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -1383,7 +776,6 @@ color: rgb(255, 255, 255);</string>
         <height>321</height>
        </rect>
       </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="cursor" stdset="0">
        <cursorShape>ForbiddenCursor</cursorShape>
       </property>
@@ -1422,24 +814,6 @@ color: rgb(255, 255, 255);</string>
       <column/>
       <column/>
      </widget>
-<<<<<<< HEAD
-     <widget class="QLabel" name="reportLabel">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>170</y>
-        <width>71</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-=======
      <widget class="QLabel" name="previewLabel">
       <property name="geometry">
        <rect>
@@ -1449,41 +823,10 @@ color: rgb(255, 255, 255);</string>
         <height>16</height>
        </rect>
       </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       <property name="text">
        <string>Esikatselu</string>
       </property>
      </widget>
-<<<<<<< HEAD
-     <widget class="QPushButton" name="savePrersonPushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>110</y>
-        <width>81</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(55, 154, 220);
-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>Tulosta</string>
-      </property>
-     </widget>
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
     </widget>
    </widget>
   </widget>
@@ -1501,11 +844,7 @@ color: rgb(255, 255, 255);</string>
      <string>Asetukset</string>
     </property>
     <addaction name="actionMuokkaa"/>
-<<<<<<< HEAD
-    <addaction name="actionSalasana"/>
-=======
     <addaction name="actionVaihda_salasana"/>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
     <addaction name="actionTietoja_ohjelmasta"/>
    </widget>
    <addaction name="menuAsetukset"/>
@@ -1515,12 +854,9 @@ color: rgb(255, 255, 255);</string>
    <property name="text">
     <string>Muokkaa...</string>
    </property>
-<<<<<<< HEAD
-=======
    <property name="toolTip">
     <string>Muokkaa ohjelman asetuksia</string>
    </property>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
    <property name="shortcut">
     <string>Ctrl+Shift+A</string>
    </property>
@@ -1533,11 +869,7 @@ color: rgb(255, 255, 255);</string>
     <string>Ctrl+Shift+T</string>
    </property>
   </action>
-<<<<<<< HEAD
-  <action name="actionSalasana">
-=======
   <action name="actionVaihda_salasana">
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
    <property name="text">
     <string>Salasana...</string>
    </property>

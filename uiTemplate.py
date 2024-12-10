@@ -1,36 +1,38 @@
 # PYSIDE6-MALLINE SOVELLUKSEN PÄÄIKKUNAN LUOMISEEN
-# KÄÄNETYSTÄ KÄYTTÖLITTYMÄTIEDOSTOSTA (mainWindow_ui.py)
-# ===================================================
+# KÄÄNNETYSTÄ KÄYTTÖLIITTYMÄTIEDOSTOSTA (mainWindow_ui.py)
+# =====================================================
 
 # KIRJASTOJEN JA MODUULIEN LATAUKSET
 # ----------------------------------
-import os # Polkumääräykset
-import sys # Käynistysargumentit
+import os # Polkumääritykset
+import sys # Käynnistysargumentit
 
-from PySide6 import QtWidgets #Qt-vimpaimet
-from mainWindow_ui import Ui_MainWindow # Käänetyn käyttöliitymän luokka
+from PySide6 import QtWidgets # Qt-vimpaimet
+from mainWindow_ui import Ui_MainWindow # Käännetyn käyttöliittymän luokka
 
-# Märitellään luokka, joka perii QMainWindow- ja UI_MainWindow luokan
+# Määritellään luokka, joka perii QMainWindow- ja Ui_MainWindow-luokan
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     """A class for creating main window for the application"""
-
-    # Määritellään oliomuodostin ja kutsutaan yliluokkien muodostimia
+    
+    # Määritellään olionmuodostin ja kutsutaan yliluokkien muodostimia
     def __init__(self):
         super().__init__()
 
-        # Luodaan käyttöliitymä konvertoidun tiedoston perusteella MainWindown ui-ominaisuudeksi. Tämä suojaa lopun MainWindow-olion ylikirjoitukselta
+        # Luodaan käyttöliittymä konvertoidun tiedoston perusteella MainWindow:n ui-ominaisuudeksi. Tämä suojaa lopun MainWindow-olion ylikirjoitukselta, kun ui-tiedostoa päivitetään
         self.ui = Ui_MainWindow()
 
         # Kutsutaan käyttöliittymän muodostusmetodia setupUi
         self.ui.setupUi(self)
 
-        # OHJELMOIDUT SINGAALIT
+        # OHJELMOIDUT SIGNAALIT
         # ---------------------
-
-        # Kun Tulosta painiketta on klikattu, kutsutaan updatePrintedLabel-metodia
+        
+        # Kun Tulosta-painiketta on klikattu, kutsutaan updatePrintedLabel-metodia
         self.ui.tulostaPushButton.clicked.connect(self.updatePrintedLabel)
 
-      
+        
+   
+   
     # OHJELMOIDUT SLOTIT
     # ------------------
 
@@ -44,9 +46,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         msgBox = QtWidgets.QMessageBox()
         msgBox.setIcon(QtWidgets.QMessageBox.Critical)
         msgBox.setWindowTitle('Hirveetä!')
-        msgBox.setText('Jotian kamalaa tapahtui')
+        msgBox.setText('Jotain kamalaa tapahtui')
         msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
         msgBox.exec()
+
 
 # Luodaan sovellus
 app = QtWidgets.QApplication(sys.argv)
@@ -55,7 +58,6 @@ app = QtWidgets.QApplication(sys.argv)
 window = MainWindow()
 window.show()
 
-# Käynistetään sovellus ja tapahtumienkäsittelijä
+# Käynnistetään sovellus ja tapahtumienkäsittelijä
 app.exec()
-
     

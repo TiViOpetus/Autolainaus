@@ -15,13 +15,8 @@ CREATE TABLE ryhma (
                 CONSTRAINT ryhma_pk PRIMARY KEY (ryhma)
 );
 COMMENT ON TABLE ryhma IS 'Opiskelijan luokka';
-<<<<<<< HEAD
-COMMENT ON COLUMN ryhma.ryhma IS 'RyhmÔøΩn nimi, esim. auto22B tai henkilÔøΩkunta';
-COMMENT ON COLUMN ryhma.vastuuhenkilo IS 'Vastuuopettaja tai lÔøΩhiesimies';
-=======
-COMMENT ON COLUMN ryhma.ryhma IS 'Ryhm‰n nimi, esim. auto22B tai henkilˆkunta';
-COMMENT ON COLUMN ryhma.vastuuhenkilo IS 'Vastuuopettaja tai l‰hiesimies';
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
+COMMENT ON COLUMN ryhma.ryhma IS 'Ryhm√§n nimi, esim. auto22B tai henkil√∂kunta';
+COMMENT ON COLUMN ryhma.vastuuhenkilo IS 'Vastuuopettaja tai l√§hiesimies';
 
 
 CREATE TABLE lainaaja (
@@ -35,13 +30,8 @@ CREATE TABLE lainaaja (
 );
 COMMENT ON TABLE lainaaja IS 'Lainaajan (opiskelija tai ope) perustiedot';
 COMMENT ON COLUMN lainaaja.hetu IS 'Kansallinen henkiltunnus';
-<<<<<<< HEAD
-COMMENT ON COLUMN lainaaja.sahkoposti IS 'Rasekon sÔøΩhkÔøΩpostiosoite';
-COMMENT ON COLUMN lainaaja.ryhma IS 'RyhmÔøΩn nimi, esim. auto22B tai henkilÔøΩkunta';
-=======
-COMMENT ON COLUMN lainaaja.sahkoposti IS 'Rasekon s‰hkˆpostiosoite';
-COMMENT ON COLUMN lainaaja.ryhma IS 'Ryhm‰n nimi, esim. auto22B tai henkilˆkunta';
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
+COMMENT ON COLUMN lainaaja.sahkoposti IS 'Rasekon s√§hk√∂postiosoite';
+COMMENT ON COLUMN lainaaja.ryhma IS 'Ryhm√§n nimi, esim. auto22B tai henkil√∂kunta';
 COMMENT ON COLUMN lainaaja.ajokorttiluokka IS 'Esim AB tai ABCE';
 
 
@@ -58,13 +48,8 @@ CREATE TABLE lainaus (
 COMMENT ON TABLE lainaus IS 'Lainaustapahtuman tiedot';
 COMMENT ON COLUMN lainaus.lainausnumero IS 'Lainaustapahtumalle automaattisesti annettava juokseva numero';
 COMMENT ON COLUMN lainaus.hetu IS 'Kansallinen henkiltunnus';
-<<<<<<< HEAD
-COMMENT ON COLUMN lainaus.lainausaika IS 'PÔøΩivÔøΩmÔøΩÔøΩra ja kellonaika, kun auto on otettu lainaan';
-COMMENT ON COLUMN lainaus.palautus IS 'Palautuksen pÔøΩivÔøΩ ja kellonaika';
-=======
-COMMENT ON COLUMN lainaus.lainausaika IS 'P‰iv‰m‰‰ra ja kellonaika, kun auto on otettu lainaan';
-COMMENT ON COLUMN lainaus.palautus IS 'Palautuksen p‰iv‰ ja kellonaika';
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
+COMMENT ON COLUMN lainaus.lainausaika IS 'P√§iv√§m√§√§ra ja kellonaika, kun auto on otettu lainaan';
+COMMENT ON COLUMN lainaus.palautus IS 'Palautuksen p√§iv√§ ja kellonaika';
 
 
 ALTER SEQUENCE lainaus_lainausnumero_seq OWNED BY lainaus.lainausnumero;
@@ -89,8 +74,3 @@ REFERENCES lainaaja (hetu)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000

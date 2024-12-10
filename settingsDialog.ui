@@ -6,87 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-<<<<<<< HEAD
-    <width>312</width>
-    <height>201</height>
-=======
     <width>301</width>
     <height>196</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-<<<<<<< HEAD
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>16</x>
-     <y>10</y>
-     <width>86</width>
-     <height>141</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QLabel" name="serverLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Palvelin</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="portLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Portti</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="userLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Käyttäjätunnus</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="databaseLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Tietokanta</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>10</y>
-     <width>181</width>
-     <height>146</height>
-=======
   <widget class="QPushButton" name="saveSettingspushButton">
    <property name="enabled">
     <bool>true</bool>
@@ -127,7 +53,6 @@ color: rgb(255, 255, 255);</string>
      <y>10</y>
      <width>181</width>
      <height>141</height>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -163,11 +88,7 @@ color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="toolTip">
-<<<<<<< HEAD
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Palvelimen käyttäjätunnus&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-=======
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Tietokannan nimi&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       </property>
      </widget>
     </item>
@@ -179,50 +100,12 @@ color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="toolTip">
-<<<<<<< HEAD
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Sovelluksen käyttäjä tunnus&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-=======
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Sovelluksen käyttäjätunnus&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-<<<<<<< HEAD
-  <widget class="QPushButton" name="saveSettingsPushButton">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>160</y>
-     <width>81</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="toolTip">
-    <string>Tallenna asetukset tiedostoon</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(55, 154, 220);
-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Tallenna</string>
-   </property>
-=======
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
@@ -282,7 +165,6 @@ color: rgb(255, 255, 255);</string>
      </widget>
     </item>
    </layout>
->>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
   </widget>
  </widget>
  <resources/>
