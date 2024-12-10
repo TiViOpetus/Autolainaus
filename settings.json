@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"server": "127.0.0.1", "port": "5432", "database": "postgres", "userName": "autolainaus", "password": "gAAAAABnUW-NNTSVRcXFF3IMiGkwC6yaVnWUe-A0y5ocwJoXfkmdWEoQpm6QO2SnxzDbvaYYjAtNqrw3mrFjswSKB_nGdJVHlw=="}
+=======
+{"server": "127.0.0.1", "port": "5432", "database": "autolainaus", "userName": "postgres"}
+>>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000

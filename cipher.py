@@ -35,7 +35,7 @@ def encrypt(chipher: object, plainText: bytes) -> bytes:
         plainText (str): Text to be encrypted
 
     Returns:
-        str: encrypted text in byte format
+        bytes: encrypted text in byte format
     """
     cryptoText = chipher.encrypt(plainText)
     return cryptoText
@@ -72,7 +72,11 @@ def encryptString(plainText: str, key=b'8Zra5xvI3derJNwLCue1iDdw0lbZm_T0zXFaBknP
     cryptoText = encrypt(chipherEngine, byteForm).decode() # Salataan ja muunnetaan salattu teksti merkkijonoksi decode-metodilla
     return cryptoText
 
+<<<<<<< HEAD
 def decryptString(cryptoText: str | bytes, key=b'8Zra5xvI3derJNwLCue1iDdw0lbZm_T0zXFaBknPXI4=') -> str:
+=======
+def decryptString(cryptoText: str | bytes, key=b'8Zra5xvI3derJNwLCue1iDdw0lbZm_T0zXFaBknPXI4=') -> str | bytes:
+>>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
     """Decrypts a Fernet encrypted string to a plain text string
 
     Args:
@@ -94,4 +98,8 @@ if __name__ == "__main__":
     sala = encryptString(selko)
     print('Salakirjoitettuna se on:', sala)
     purettu = decryptString(sala)
+<<<<<<< HEAD
     print('Purettuna se on:', purettu)
+=======
+    print('Purettuna se on:', purettu)
+>>>>>>> 07b16a6a85c7ac39b1c1e5023662ba758a545000
