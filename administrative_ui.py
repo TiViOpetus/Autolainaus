@@ -31,6 +31,8 @@ class Ui_MainWindow(object):
         self.actionMuokkaa.setObjectName(u"actionMuokkaa")
         self.actionTietoja_ohjelmasta = QAction(MainWindow)
         self.actionTietoja_ohjelmasta.setObjectName(u"actionTietoja_ohjelmasta")
+        self.actionSalasana = QAction(MainWindow)
+        self.actionSalasana.setObjectName(u"actionSalasana")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -277,37 +279,37 @@ class Ui_MainWindow(object):
         self.storedGroupsLabel.setObjectName(u"storedGroupsLabel")
         self.storedGroupsLabel.setGeometry(QRect(20, 100, 121, 16))
         self.storedGroupsLabel.setFont(font2)
-        self.widget = QWidget(self.groupTab)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(110, 10, 169, 56))
-        self.verticalLayout = QVBoxLayout(self.widget)
+        self.layoutWidget4 = QWidget(self.groupTab)
+        self.layoutWidget4.setObjectName(u"layoutWidget4")
+        self.layoutWidget4.setGeometry(QRect(110, 10, 169, 56))
+        self.verticalLayout = QVBoxLayout(self.layoutWidget4)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.groupNameLineEdit = QLineEdit(self.widget)
+        self.groupNameLineEdit = QLineEdit(self.layoutWidget4)
         self.groupNameLineEdit.setObjectName(u"groupNameLineEdit")
         self.groupNameLineEdit.setFont(font1)
 
         self.verticalLayout.addWidget(self.groupNameLineEdit)
 
-        self.responsiblePersonLineEdit = QLineEdit(self.widget)
+        self.responsiblePersonLineEdit = QLineEdit(self.layoutWidget4)
         self.responsiblePersonLineEdit.setObjectName(u"responsiblePersonLineEdit")
         self.responsiblePersonLineEdit.setFont(font1)
 
         self.verticalLayout.addWidget(self.responsiblePersonLineEdit)
 
-        self.widget1 = QWidget(self.groupTab)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(20, 10, 81, 61))
-        self.verticalLayout_2 = QVBoxLayout(self.widget1)
+        self.layoutWidget5 = QWidget(self.groupTab)
+        self.layoutWidget5.setObjectName(u"layoutWidget5")
+        self.layoutWidget5.setGeometry(QRect(20, 10, 81, 61))
+        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget5)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.groupNameLabel = QLabel(self.widget1)
+        self.groupNameLabel = QLabel(self.layoutWidget5)
         self.groupNameLabel.setObjectName(u"groupNameLabel")
         self.groupNameLabel.setFont(font2)
 
         self.verticalLayout_2.addWidget(self.groupNameLabel)
 
-        self.responsiblePersonLabel = QLabel(self.widget1)
+        self.responsiblePersonLabel = QLabel(self.layoutWidget5)
         self.responsiblePersonLabel.setObjectName(u"responsiblePersonLabel")
         self.responsiblePersonLabel.setFont(font2)
 
@@ -384,11 +386,12 @@ class Ui_MainWindow(object):
 
         self.menubar.addAction(self.menuAsetukset.menuAction())
         self.menuAsetukset.addAction(self.actionMuokkaa)
+        self.menuAsetukset.addAction(self.actionSalasana)
         self.menuAsetukset.addAction(self.actionTietoja_ohjelmasta)
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -404,6 +407,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionTietoja_ohjelmasta.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+Shift+T", None))
 #endif // QT_CONFIG(shortcut)
+        self.actionSalasana.setText(QCoreApplication.translate("MainWindow", u"Salasana...", None))
         self.registerdPersonsLabel.setText(QCoreApplication.translate("MainWindow", u"Rekister\u00f6idyt lainaajat", None))
         self.savePrersonPushButton.setText(QCoreApplication.translate("MainWindow", u"Tallenna", None))
         self.ssnLabel.setText(QCoreApplication.translate("MainWindow", u"Henkil\u00f6tunnus", None))

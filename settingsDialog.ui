@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>312</width>
-    <height>198</height>
+    <height>201</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -71,18 +71,6 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLabel" name="passwordLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Salasana</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="layoutWidget_2">
@@ -143,24 +131,12 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="passwordLineEdit">
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Salasana&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="saveSettingsPushButton">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>220</x>

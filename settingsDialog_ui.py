@@ -22,7 +22,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(312, 198)
+        Dialog.resize(312, 201)
         self.layoutWidget = QWidget(Dialog)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(16, 10, 86, 141))
@@ -54,12 +54,6 @@ class Ui_Dialog(object):
         self.databaseLabel.setFont(font)
 
         self.verticalLayout_2.addWidget(self.databaseLabel)
-
-        self.passwordLabel = QLabel(self.layoutWidget)
-        self.passwordLabel.setObjectName(u"passwordLabel")
-        self.passwordLabel.setFont(font)
-
-        self.verticalLayout_2.addWidget(self.passwordLabel)
 
         self.layoutWidget_2 = QWidget(Dialog)
         self.layoutWidget_2.setObjectName(u"layoutWidget_2")
@@ -93,15 +87,9 @@ class Ui_Dialog(object):
 
         self.verticalLayout.addWidget(self.userLineEdit)
 
-        self.passwordLineEdit = QLineEdit(self.layoutWidget_2)
-        self.passwordLineEdit.setObjectName(u"passwordLineEdit")
-        self.passwordLineEdit.setFont(font1)
-        self.passwordLineEdit.setEchoMode(QLineEdit.Password)
-
-        self.verticalLayout.addWidget(self.passwordLineEdit)
-
         self.saveSettingsPushButton = QPushButton(Dialog)
         self.saveSettingsPushButton.setObjectName(u"saveSettingsPushButton")
+        self.saveSettingsPushButton.setEnabled(True)
         self.saveSettingsPushButton.setGeometry(QRect(220, 160, 81, 23))
         font2 = QFont()
         font2.setPointSize(10)
@@ -122,7 +110,6 @@ class Ui_Dialog(object):
         self.portLabel.setText(QCoreApplication.translate("Dialog", u"Portti", None))
         self.userLabel.setText(QCoreApplication.translate("Dialog", u"K\u00e4ytt\u00e4j\u00e4tunnus", None))
         self.databaseLabel.setText(QCoreApplication.translate("Dialog", u"Tietokanta", None))
-        self.passwordLabel.setText(QCoreApplication.translate("Dialog", u"Salasana", None))
 #if QT_CONFIG(tooltip)
         self.serverLineEdit.setToolTip(QCoreApplication.translate("Dialog", u"<html><head/><body><p><span style=\" font-size:10pt;\">Palvelimen nimi tai IP-osoite</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
@@ -134,9 +121,6 @@ class Ui_Dialog(object):
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.userLineEdit.setToolTip(QCoreApplication.translate("Dialog", u"<html><head/><body><p><span style=\" font-size:10pt;\">Sovelluksen k\u00e4ytt\u00e4j\u00e4 tunnus</span></p></body></html>", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        self.passwordLineEdit.setToolTip(QCoreApplication.translate("Dialog", u"<html><head/><body><p><span style=\" font-size:10pt;\">Salasana</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.saveSettingsPushButton.setToolTip(QCoreApplication.translate("Dialog", u"Tallenna asetukset tiedostoon", None))

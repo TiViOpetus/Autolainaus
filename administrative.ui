@@ -36,7 +36,7 @@
      <locale language="Finnish" country="Finland"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="studentTab">
      <property name="cursor">
@@ -644,7 +644,7 @@ color: rgb(255, 255, 255);</string>
        <string>Tallenetut ryhmät</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -678,7 +678,7 @@ color: rgb(255, 255, 255);</string>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -984,6 +984,7 @@ color: rgb(255, 255, 255);</string>
      <string>Asetukset</string>
     </property>
     <addaction name="actionMuokkaa"/>
+    <addaction name="actionSalasana"/>
     <addaction name="actionTietoja_ohjelmasta"/>
    </widget>
    <addaction name="menuAsetukset"/>
@@ -1003,6 +1004,11 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+T</string>
+   </property>
+  </action>
+  <action name="actionSalasana">
+   <property name="text">
+    <string>Salasana...</string>
    </property>
   </action>
  </widget>
