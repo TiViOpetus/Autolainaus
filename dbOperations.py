@@ -126,7 +126,7 @@ class DbConnection():
                 cursor.close() # Tuhotaan kursori
                 currentConnection.close() # Tuhotaan yhteys
         
-    # Tee metodi tietojen lukemiseen, taulun valitut sarakkeet
+    # Metodi tietojen lukemiseen, taulun valitut sarakkeet
     def readColumsFromTable(self, table: str, columns: list) -> list:
         """Returns all rows from a table. Columns are defined for the result set
 
