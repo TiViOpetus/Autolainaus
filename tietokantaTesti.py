@@ -47,7 +47,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         data = {'etunimi': self.ui.firstNameLineEdit.text(),
                 'sukunimi': self.ui.lastNameLineEdit.text()}
         dbconnection.addToTable('person', data)
-        self.openWarning()
+
+        # Määritellään tilarivin teksti, näyttöaika 3 sek.
+        message = f'Henkilön {self.ui.firstNameLineEdit.text()} {self.ui.lastNameLineEdit.text()} tiedot tallennettiin'
+        self.ui.statusbar.showMessage(message, 3000)
+
+        # Tyhjennetään kentät
         self.ui.firstNameLineEdit.clear()
         self.ui.lastNameLineEdit.clear()
         

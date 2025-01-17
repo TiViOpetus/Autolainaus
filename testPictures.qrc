@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="png">
+    <file>keys.png</file>
+    <file>student.png</file>
+  </qresource>
+</RCC>
