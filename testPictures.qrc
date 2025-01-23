@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="png">
+    <file>VWnbg.png</file>
     <file>ota.png</file>
     <file>palauta.drawio.png</file>
     <file>Teacher.png</file>

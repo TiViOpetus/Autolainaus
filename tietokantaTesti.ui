@@ -50,6 +50,9 @@ color: rgb(32, 75, 70);</string>
     <property name="placeholderText">
      <string>Lue ajokortti</string>
     </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLineEdit" name="keyBarcodeLineEdit">
     <property name="enabled">
@@ -140,6 +143,9 @@ background-color: rgb(140, 51, 85);</string>
     </property>
     <property name="pixmap">
      <pixmap resource="testPictures.qrc">:/png/keys.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="teacherPictureLabel">
@@ -323,6 +329,11 @@ color: rgb(255, 255, 255);</string>
    <addaction name="menuTiedosto"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="toolTipDuration">
     <number>-1</number>
    </property>
@@ -370,54 +381,5 @@ color: rgb(255, 255, 255);</string>
  <resources>
   <include location="testPictures.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>takeCarPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>teacherPictureLabel</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>203</x>
-     <y>100</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>164</x>
-     <y>212</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>returnCarPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>keyPictureLabel</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>401</x>
-     <y>94</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>407</x>
-     <y>254</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>ssnLineEdit</sender>
-   <signal>returnPressed()</signal>
-   <receiver>keyBarcodeLineEdit</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>183</x>
-     <y>382</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>412</x>
-     <y>379</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

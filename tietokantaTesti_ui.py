@@ -55,6 +55,7 @@ class Ui_MainWindow(object):
         self.ssnLineEdit.setStyleSheet(u"background-color: rgb(255, 255, 127);\n"
 "color: rgb(32, 75, 70);")
         self.ssnLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.ssnLineEdit.setClearButtonEnabled(True)
         self.keyBarcodeLineEdit = QLineEdit(self.centralwidget)
         self.keyBarcodeLineEdit.setObjectName(u"keyBarcodeLineEdit")
         self.keyBarcodeLineEdit.setEnabled(True)
@@ -82,6 +83,7 @@ class Ui_MainWindow(object):
         self.keyPictureLabel.setEnabled(True)
         self.keyPictureLabel.setGeometry(QRect(330, 180, 201, 141))
         self.keyPictureLabel.setPixmap(QPixmap(u":/png/keys.png"))
+        self.keyPictureLabel.setScaledContents(True)
         self.teacherPictureLabel = QLabel(self.centralwidget)
         self.teacherPictureLabel.setObjectName(u"teacherPictureLabel")
         self.teacherPictureLabel.setEnabled(True)
@@ -140,6 +142,9 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
+        font3 = QFont()
+        font3.setPointSize(9)
+        self.statusbar.setFont(font3)
         self.statusbar.setToolTipDuration(-1)
         self.statusbar.setStyleSheet(u"background-color: rgb(243, 89, 148);")
         MainWindow.setStatusBar(self.statusbar)
@@ -154,9 +159,6 @@ class Ui_MainWindow(object):
         self.menuEdelliset.addAction(self.actionMikko)
 
         self.retranslateUi(MainWindow)
-        self.takeCarPushButton.clicked.connect(self.teacherPictureLabel.show)
-        self.returnCarPushButton.clicked.connect(self.keyPictureLabel.show)
-        self.ssnLineEdit.returnPressed.connect(self.keyBarcodeLineEdit.show)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
