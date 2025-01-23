@@ -1,3 +1,6 @@
+"""A module to produce beep-sounds and play recorded wav-files 
+"""
+
 # MODUULI ÄÄNIMERKKIEN ANTAMISEEN
 # ===============================
 
