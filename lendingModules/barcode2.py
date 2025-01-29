@@ -1,5 +1,3 @@
-"""A module to produce Code 128 barcodes. There are simple functions which produce Code128B barcodes. There is also a class to create and check validity of Code128 barcode variants.
-"""
 # MODUULI VIIVAKOODIEN TUOTTAMISEEN
 # =================================
 
@@ -181,7 +179,7 @@ class Code128B():
     
 
 if __name__ == "__main__":
-    testi = Code128B('XSE-778')
+    testi = Code128B('AM-15')
     try:
         tulos = testi.checkValidityOfText()
         print(testi.text, 'on kelvollinen viivakoodiksi', tulos)

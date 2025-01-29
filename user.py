@@ -29,6 +29,29 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         
         # Ohjelman käynnistyksessä piilotetaan tarpeettomat elementit
+        self.setInitialElements()
+
+
+        # OHJELMOIDUT SIGNAALIT
+        # ---------------------
+        
+        # Kun Lainaa-painiketta painetaan, kutsutaan activateLender-metodia
+        self.ui.takeCarPushButton.clicked.connect(self.activateLender)
+
+        # Kun ajokortin viivakoodi on luettu, kutsutaan activateKey-metodia
+        self.ui.ssnLineEdit.returnPressed.connect(self.activateKey)
+        
+        # Kun avaimenperä on luettu, kutsutaan setLendingData
+        self.ui.keyBarcodeLineEdit.returnPressed.connect(self.setLendingData)
+   
+    # OHJELMOIDUT SLOTIT
+    # ------------------
+
+    # Palauta käyttöliittymä alkutilanteeseen
+    def setInitialElements(self):
+        self.ui.returnCarPushButton.show()
+        self.ui.takeCarPushButton.show()
+        self.ui.okPushButton.hide()
         self.ui.calendarLabel.hide()
         self.ui.clockLabel.hide()
         self.ui.dateLabel.hide()
@@ -38,23 +61,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.lenderPictureLabel.hide()
         self.ui.soundOnPushButton.hide()
         self.ui.ssnLineEdit.hide()
-        self.ui.keyBarcodeLineEdit.hide()
         self.ui.statusLabel.hide()
         self.ui.timeLabel.hide()
+        self.ui.lenderNameLabel.hide()
+        self.ui.carInfoLabel.hide()
 
-
-
-        # OHJELMOIDUT SIGNAALIT
-        # ---------------------
-        
-        # Kun Tulosta-painiketta on klikattu, kutsutaan updatePrintedLabel-metodia
-        self.ui.takeCarPushButton.clicked.connect(self.activateLender)
-
-        
-   
-   
-    # OHJELMOIDUT SLOTIT
-    # ------------------
+    # Näyttää lainaajan kuvakkeen ja henkilötunnuksen kentän
     def activateLender(self):
         self.ui.statusLabel.setText('Auton lainaus')
         self.ui.lenderPictureLabel.show()
@@ -66,10 +78,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.statusLabel.show()
         self.ui.statusbar.showMessage('Syötä ajokortti koneeseen')
 
-    # Muutetaan tulostettuLabel:n sisältö: teksti ja väri
-    def updatePrintedLabel(self):
-        self.ui.tulostettuLabel.setText('Tulostettu')
-        self.ui.tulostettuLabel.setStyleSheet(u"color: rgb(0, 255, 0);")
+    # Näyttää avaimen kuvakkeen, rekisterikenttä ja lainaajan tiedot
+    def activateKey(self):
+        self.ui.keyPictureLabel.show()
+        self.ui.keyBarcodeLineEdit.show()
+        self.ui.keyBarcodeLineEdit.setFocus()
+        self.ui.lenderNameLabel.show()
+
+    # Näyttää lainauksen loput tiedot
+    def setLendingData(self):
+        self.ui.carInfoLabel.show()
+        self.ui.dateLabel.show()
+        self.ui.clockLabel.show()
+        self.ui.okPushButton.show()
 
     # Avataan MessageBox
     def openWarning(self):
