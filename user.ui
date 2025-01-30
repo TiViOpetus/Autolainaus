@@ -60,9 +60,9 @@ color: rgb(32, 75, 70);</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>360</x>
       <y>330</y>
-      <width>121</width>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>
@@ -324,7 +324,7 @@ background-color: rgb(140, 51, 85);</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Palaa takaisin</string>
+     <string>KUMOA</string>
     </property>
     <property name="icon">
      <iconset resource="userUiRescources.qrc">
@@ -345,6 +345,9 @@ color: rgb(255, 255, 255);</string>
       <width>101</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Ottaa äänet käyttöön&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(140, 51, 85);</string>
@@ -371,6 +374,9 @@ color: rgb(255, 255, 255);</string>
       <width>101</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Vaimentaa äänet&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(140, 51, 85);</string>
@@ -471,6 +477,9 @@ color: rgb(255, 255, 255);</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Tallentaa tiedot ajopäiväkirjaan&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(140, 51, 85);
 color: rgb(255, 255, 255);</string>
@@ -483,6 +492,39 @@ color: rgb(255, 255, 255);</string>
       <width>32</width>
       <height>32</height>
      </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="keyReturnBarcodeLineEdit">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>330</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 127);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Lue avain</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
