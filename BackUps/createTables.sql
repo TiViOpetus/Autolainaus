@@ -5,6 +5,7 @@ CREATE TABLE auto (
                 merkki VARCHAR(30) NOT NULL,
                 malli VARCHAR(20) NOT NULL,
                 vuosimalli CHAR(4) NOT NULL,
+                henkilomaara INT
                 CONSTRAINT auto_pk PRIMARY KEY (rekisterinumero)
 );
 COMMENT ON TABLE auto IS 'Ajoneuvon perustiedot';
