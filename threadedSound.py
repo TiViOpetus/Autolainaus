@@ -51,7 +51,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     @Slot()
     def playWavFile(self):
-        sound.playWav('sounds\\readKey.WAV')
+        sound.playWav('sounds\\readKey.wav')
 
     # Luodaan säie, joka suorittaa äänitiedoston soittamisen   
     @Slot()
