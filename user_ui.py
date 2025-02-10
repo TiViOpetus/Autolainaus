@@ -16,9 +16,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
+    QMainWindow, QMenu, QMenuBar, QPlainTextEdit,
+    QPushButton, QSizePolicy, QStatusBar, QWidget)
 import userUiRescources_rc
 
 class Ui_MainWindow(object):
@@ -54,6 +54,7 @@ class Ui_MainWindow(object):
         self.ssnLineEdit.setFont(font)
         self.ssnLineEdit.setStyleSheet(u"background-color: rgb(255, 255, 127);\n"
 "color: rgb(32, 75, 70);")
+        self.ssnLineEdit.setEchoMode(QLineEdit.EchoMode.NoEcho)
         self.ssnLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.ssnLineEdit.setClearButtonEnabled(True)
         self.keyBarcodeLineEdit = QLineEdit(self.centralwidget)
@@ -151,15 +152,15 @@ class Ui_MainWindow(object):
         self.soundOnPushButton.setIconSize(QSize(48, 48))
         self.soundOffPushButton = QPushButton(self.centralwidget)
         self.soundOffPushButton.setObjectName(u"soundOffPushButton")
-        self.soundOffPushButton.setGeometry(QRect(520, 0, 101, 101))
-        self.soundOffPushButton.setStyleSheet(u"background-color: rgb(140, 51, 85);")
+        self.soundOffPushButton.setGeometry(QRect(530, 130, 101, 101))
+        self.soundOffPushButton.setStyleSheet(u"background-color: rgba(255, 255, 255, 0);")
         icon6 = QIcon()
         icon6.addFile(u":/pictures/uiPictures/soundOff.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.soundOffPushButton.setIcon(icon6)
         self.soundOffPushButton.setIconSize(QSize(56, 56))
         self.statusLabel = QLabel(self.centralwidget)
         self.statusLabel.setObjectName(u"statusLabel")
-        self.statusLabel.setGeometry(QRect(70, 10, 441, 91))
+        self.statusLabel.setGeometry(QRect(70, 20, 441, 91))
         font4 = QFont()
         font4.setPointSize(36)
         font4.setBold(True)
@@ -196,6 +197,19 @@ class Ui_MainWindow(object):
         self.keyReturnBarcodeLineEdit.setStyleSheet(u"background-color: rgb(255, 255, 127);")
         self.keyReturnBarcodeLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.keyReturnBarcodeLineEdit.setClearButtonEnabled(True)
+        self.frame = QFrame(self.centralwidget)
+        self.frame.setObjectName(u"frame")
+        self.frame.setGeometry(QRect(30, 110, 251, 351))
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.plainTextEdit = QPlainTextEdit(self.frame)
+        self.plainTextEdit.setObjectName(u"plainTextEdit")
+        self.plainTextEdit.setGeometry(QRect(0, 10, 251, 331))
+        font7 = QFont()
+        font7.setPointSize(10)
+        font7.setBold(True)
+        self.plainTextEdit.setFont(font7)
+        self.plainTextEdit.setStyleSheet(u"color: rgb(255, 255, 255);")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -209,9 +223,9 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
-        font7 = QFont()
-        font7.setPointSize(9)
-        self.statusbar.setFont(font7)
+        font8 = QFont()
+        font8.setPointSize(9)
+        self.statusbar.setFont(font8)
         self.statusbar.setToolTipDuration(-1)
         self.statusbar.setStyleSheet(u"background-color: rgb(243, 89, 148);")
         MainWindow.setStatusBar(self.statusbar)
@@ -277,6 +291,9 @@ class Ui_MainWindow(object):
         self.okPushButton.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.keyReturnBarcodeLineEdit.setText("")
         self.keyReturnBarcodeLineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Lue avain", None))
+        self.plainTextEdit.setPlainText(QCoreApplication.translate("MainWindow", u"Vapaat ajoneuvot:\n"
+"XSE-778 Toyota BZ4X 5 henkil\u00f6\u00e4\n"
+"XYZ-123 VW Transtporter 3 henkil\u00f6\u00e4", None))
         self.menuTiedosto.setTitle(QCoreApplication.translate("MainWindow", u"Tiedosto", None))
         self.menuEdelliset.setTitle(QCoreApplication.translate("MainWindow", u"Edelliset", None))
     # retranslateUi

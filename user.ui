@@ -44,6 +44,9 @@ color: rgb(32, 75, 70);</string>
     <property name="text">
      <string/>
     </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::NoEcho</enum>
+    </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
@@ -369,8 +372,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="soundOffPushButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>0</y>
+      <x>530</x>
+      <y>130</y>
       <width>101</width>
       <height>101</height>
      </rect>
@@ -379,7 +382,7 @@ color: rgb(255, 255, 255);</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Vaimentaa äänet&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(140, 51, 85);</string>
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
@@ -399,7 +402,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>10</y>
+      <y>20</y>
       <width>441</width>
       <height>91</height>
      </rect>
@@ -526,6 +529,46 @@ color: rgb(255, 255, 255);</string>
     <property name="clearButtonEnabled">
      <bool>true</bool>
     </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>110</y>
+      <width>251</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>251</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="plainText">
+      <string>Vapaat ajoneuvot:
+XSE-778 Toyota BZ4X 5 henkilöä
+XYZ-123 VW Transtporter 3 henkilöä</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
