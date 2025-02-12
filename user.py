@@ -141,19 +141,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             dbConnection = dbOperations.DbConnection(dbSettings)
             freeVehicles = dbConnection.readAllColumnsFromTable('vapaana')
             
-            # Määritellään vapaana oleliven autojen tiedot
-            # availablePlainTextEdit-elementtiin
-            availableVehiclesData = ''
-            text = ''
-            
-            for vehiclTtuple in freeVehicles:
-                rowData = ''
-                for vehicleData in vehiclTtuple:
-                    rowData = rowData + f'{vehicleData} '
-                text = rowData + 'henkilöä\n'
-                availableVehiclesData = availableVehiclesData + text
-
-            self.ui.availablePlainTextEdit.setPlainText(availableVehiclesData)
+            # Muodostetaan luettelo vapaista autoista createCatalog-metodilla
+            catalogData = self.createCatalog(freeVehicles, 'paikkaa')
+            self.ui.availablePlainTextEdit.setPlainText(catalogData)
 
         except Exception as e:
             title = 'Autotietojen lukeminen ei onnistunut'
@@ -268,7 +258,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def goBack(self):
         self.setInitialElements()
         self.ui.statusbar.showMessage('Toiminto peruutettiin', 5000)
-        
+    
+    # Metodi monirivisen luettelon muodostamiseen taulun tai näkymän datasta
+    def createCatalog(self, tupleList: list, suffix='') -> str:
+        """Creates a catalog like text for plainText edits from list of tuples.
+        Typically list comes from a database table or view.
+
+        Args:
+            tupleList (list): list of tuples containing table data
+            suffix (str, optional): a phrase to add to the end of the line. Defaults to ''.
+
+        Returns:
+            str: Plain text for the catalog
+        """
+        # Määritellään vapaana oleliven autojen tiedot
+        # availablePlainTextEdit-elementtiin
+        catalogData = ''
+        rowText = ''
+            
+        for vehiclTtuple in tupleList:
+            rowData = ''
+            for vehicleData in vehiclTtuple:
+                rowData = rowData + f'{vehicleData} '
+            rowText = rowData + f'{suffix}\n'
+            catalogData = catalogData + rowText
+        return catalogData
+    
     # Avataan MessageBox
     # Malli mahdollista virheilmoitusta varten
     def openWarning(self, title: str, text:str, detailedText:str) -> None: 

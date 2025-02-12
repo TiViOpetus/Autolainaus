@@ -579,6 +579,9 @@ color: rgb(255, 255, 255);</string>
      <property name="midLineWidth">
       <number>0</number>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
      <property name="plainText">
       <string>XSE-778 Toyota BZ4X 5 henkilöä
 XYZ-123 VW Transtporter 3 henkilöä</string>
@@ -666,7 +669,7 @@ border-color: rgb(255, 255, 255);</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="availableLabel_2">
+    <widget class="QLabel" name="inUseLabel">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -691,6 +694,19 @@ border-color: rgb(255, 255, 255);</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="playPushButton">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>200</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Soita</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
