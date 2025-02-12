@@ -9,7 +9,7 @@ import sys # Käynnistysargumentit
 import json # JSON-tiedostojen käsittely
 
 from PySide6 import QtWidgets # Qt-vimpaimet
-from PySide6.QtCore import QThreadPool, Slot
+from PySide6.QtCore import QThreadPool, Slot # Säikeistys ja Slot-dekoraattori
 
 from lendingModules import sound # Äänitoiminnot
 from lendingModules import dbOperations # Tietokantatoiminnot
@@ -26,6 +26,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     # Määritellään olionmuodostin ja kutsutaan yliluokkien muodostimia
     def __init__(self):
         super().__init__()
+
+        # Luodaan säikeistystä varten uusi säievaranto
+        self.threadPool = QThreadPool().globalInstance()
 
         # Luodaan käyttöliittymä konvertoidun tiedoston perusteella MainWindow:n ui-ominaisuudeksi. Tämä suojaa lopun MainWindow-olion ylikirjoitukselta, kun ui-tiedostoa päivitetään
         self.ui = Ui_MainWindow()
@@ -44,8 +47,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             # Puretaan salasana tietokantaoperaatioita varten  
             self.plainTextPassword = cipher.decryptString(self.currentSettings['password'])
         
+        # Jos asetusten luku ei onnistu, näytetään virhedialogi
         except Exception as error:
-            self.openWarning()
+            title = 'Tietokanta-asetusten luku ei onnistunut'
+            text = 'Tietokanta-asetuksien avaaminen ja salasanan purku ei onnistunut'
+            detailedText = str(error)
+            self.openWarning(title, text, detailedText)
 
 
         # Äänet oletuksena käytössä
@@ -89,11 +96,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     # OHJELMOIDUT SLOTIT
     # ------------------
    
+    # Soita parametrina annettu äänistiedosto (työfunktio)
+    @Slot(str)
+    def playSoundFile(self, soundFileName):
+        fileAndPath = 'sounds\\' + soundFileName
+        sound.playWav(fileAndPath)
+    
+    # Säikeen käynnistävä funktio 
+    @Slot(str)
+    def playSoundInTread(self, soundFileName):
+        self.threadPool.start(lambda: self.playSoundFile(soundFileName))
 
     # Palauta käyttöliittymä alkutilanteeseen
     def setInitialElements(self):
         self.ui.returnCarPushButton.show()
         self.ui.takeCarPushButton.show()
+        self.ui.statusFrame.show()
         self.ui.okPushButton.hide()
         self.ui.calendarLabel.hide()
         self.ui.clockLabel.hide()
@@ -112,9 +130,42 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.timeLabel.hide()
         self.ui.lenderNameLabel.hide()
         self.ui.carInfoLabel.hide()
+        
+        # Luetaan tietokanta-asetukset paikallisiin muuttujiin
+        dbSettings = self.currentSettings
+        plainTextPassword = self.plainTextPassword
+        dbSettings['password'] = plainTextPassword # Vaidetaan selväkieliseksi
 
+        try:
+            # Luodaan tietokantayhteys-olio
+            dbConnection = dbOperations.DbConnection(dbSettings)
+            freeVehicles = dbConnection.readAllColumnsFromTable('vapaana')
+            
+            # Määritellään vapaana oleliven autojen tiedot
+            # availablePlainTextEdit-elementtiin
+            availableVehiclesData = ''
+            text = ''
+            
+            for vehiclTtuple in freeVehicles:
+                rowData = ''
+                for vehicleData in vehiclTtuple:
+                    rowData = rowData + f'{vehicleData} '
+                text = rowData + 'henkilöä\n'
+                availableVehiclesData = availableVehiclesData + text
+
+            self.ui.availablePlainTextEdit.setPlainText(availableVehiclesData)
+
+        except Exception as e:
+            title = 'Autotietojen lukeminen ei onnistunut'
+            text = 'Vapaiden autojen tiedot eivät ole saatavissa'
+            detailedText = str(e)
+            self.openWarning(title, text, detailedText) 
+        # TODO: Lisää rutiini, joka hakee ajossa olevat autot
+ 
     # Näyttää lainaajan kuvakkeen ja henkilötunnuksen kentän
+    @Slot()
     def activateLender(self):
+        self.ui.statusFrame.hide()
         self.ui.statusLabel.setText('Auton lainaus')
         self.ui.lenderPictureLabel.show()
         self.ui.ssnLineEdit.show()
@@ -125,7 +176,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.statusLabel.show()
         self.ui.statusbar.showMessage('Syötä ajokortti koneeseen')
         if self.soundOn:
-            sound.playWav('sounds\\drivingLicence.WAV')
+            self.playSoundInTread('drivingLicence.wav')
+            
         
 
     # Näyttää avaimen kuvakkeen, rekisterikenttä ja lainaajan tiedot
@@ -171,7 +223,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.setInitialElements()
             self.ui.statusbar.showMessage('Auton lainaustiedot tallennettiin', 5000)
             if self.soundOn:
-                sound.playWav('sounds\\lendingOk.WAV')
+                sound.playWav('sounds\\lendingOk.WAV')   
         except Exception as e:
             title = 'Lainaustietojen tallentaminen ei onnistu'
             text = 'Ajokorttin tai auton tiedot virheelliset, ota yhteys henkilökuntaan!'
@@ -181,6 +233,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     # Näytetään palautukseen liittyvät kentät ja kuvat
     def activateReturnCar(self):
+        self.ui.statusFrame.hide()
         self.ui.takeCarPushButton.hide()
         self.ui.returnCarPushButton.hide()
         self.ui.statusLabel.setText('Auton palautus')
@@ -189,7 +242,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.keyReturnBarcodeLineEdit.setFocus()
         self.ui.statusbar.showMessage('Lue avaimen viivakoodi')
         if self.soundOn:
-            sound.playWav('sounds\\readKey.WAV')
+            sound.play('sounds\\readKey.WAV')
 
     # Tallennetaan palautuksen tiedot tietokantaan ja palautetaan UI alkutilaan
     def saveReturnData(self):

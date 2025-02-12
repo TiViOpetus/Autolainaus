@@ -93,9 +93,9 @@ color: rgb(32, 75, 70);</string>
    <widget class="QPushButton" name="takeCarPushButton">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>10</x>
       <y>0</y>
-      <width>171</width>
+      <width>241</width>
       <height>101</height>
      </rect>
     </property>
@@ -206,9 +206,9 @@ background-color: rgb(140, 51, 85);</string>
    <widget class="QPushButton" name="returnCarPushButton">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>320</x>
       <y>0</y>
-      <width>171</width>
+      <width>251</width>
       <height>101</height>
      </rect>
     </property>
@@ -343,7 +343,7 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="soundOnPushButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>600</x>
       <y>0</y>
       <width>101</width>
       <height>101</height>
@@ -372,8 +372,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="soundOffPushButton">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>130</y>
+      <x>600</x>
+      <y>0</y>
       <width>101</width>
       <height>101</height>
      </rect>
@@ -530,26 +530,29 @@ color: rgb(255, 255, 255);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="statusFrame">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>110</y>
-      <width>251</width>
-      <height>351</height>
+      <x>10</x>
+      <y>100</y>
+      <width>561</width>
+      <height>391</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
+     <enum>QFrame::Shape::Box</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
+     <enum>QFrame::Shadow::Plain</enum>
     </property>
-    <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <widget class="QPlainTextEdit" name="availablePlainTextEdit">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>10</y>
+       <x>10</x>
+       <y>50</y>
        <width>251</width>
        <height>331</height>
       </rect>
@@ -561,12 +564,131 @@ color: rgb(255, 255, 255);</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
+      <string notr="true">color: rgb(255, 255, 255);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>4</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
      </property>
      <property name="plainText">
-      <string>Vapaat ajoneuvot:
-XSE-778 Toyota BZ4X 5 henkilöä
+      <string>XSE-778 Toyota BZ4X 5 henkilöä
 XYZ-123 VW Transtporter 3 henkilöä</string>
+     </property>
+     <property name="backgroundVisible">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="inUsePlainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>50</y>
+       <width>251</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>8</number>
+     </property>
+     <property name="plainText">
+      <string>AM-15 Renault Megane 5 henkilöä</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>50</y>
+       <width>20</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>3</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="availableLabel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>VAPAANA</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="availableLabel_2">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>10</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>AJOSSA</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </widget>
