@@ -107,7 +107,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def playSoundInTread(self, soundFileName):
         self.threadPool.start(lambda: self.playSoundFile(soundFileName))
 
-    # Palauta käyttöliittymä alkutilanteeseen
+    # Palauta käyttöliittymä alkutilanteeseen ja päivittää vapaiden ja 
+    # ajossa olevien autojen katalogit
     def setInitialElements(self):
         self.ui.returnCarPushButton.show()
         self.ui.takeCarPushButton.show()
@@ -136,22 +137,23 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         plainTextPassword = self.plainTextPassword
         dbSettings['password'] = plainTextPassword # Vaidetaan selväkieliseksi
 
+        
+        
         try:
             # Luodaan tietokantayhteys-olio
             dbConnection = dbOperations.DbConnection(dbSettings)
-            freeVehicles = dbConnection.readAllColumnsFromTable('vapaana')
+            inUseVehicles = dbConnection.readAllColumnsFromTable('ajossa')
             
             # Muodostetaan luettelo vapaista autoista createCatalog-metodilla
-            catalogData = self.createCatalog(freeVehicles, 'paikkaa')
-            self.ui.availablePlainTextEdit.setPlainText(catalogData)
+            catalogData = self.createCatalog(inUseVehicles)
+            self.ui.inUsePlainTextEdit.setPlainText(catalogData)
 
         except Exception as e:
             title = 'Autotietojen lukeminen ei onnistunut'
-            text = 'Vapaiden autojen tiedot eivät ole saatavissa'
+            text = 'Ajossa olevien autojen tiedot eivät ole saatavissa'
             detailedText = str(e)
             self.openWarning(title, text, detailedText) 
-        # TODO: Lisää rutiini, joka hakee ajossa olevat autot
- 
+    
     # Näyttää lainaajan kuvakkeen ja henkilötunnuksen kentän
     @Slot()
     def activateLender(self):
@@ -170,7 +172,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
         
 
-    # Näyttää avaimen kuvakkeen, rekisterikenttä ja lainaajan tiedot
+    # Näyttää avaimen kuvakkeen, rekisterikentän ja lainaajan tiedot
+    @Slot()
     def activateKey(self):
         self.ui.ssnLineEdit.hide()
         self.ui.keyPictureLabel.show()
@@ -179,9 +182,31 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.lenderNameLabel.show()
         self.ui.statusbar.showMessage('Syötä avaimenperä koneeseen')
         if self.soundOn:
-            sound.playWav('sounds\\readKey.WAV')
+            self.playSoundInTread('readKey.wav')
+
+        # TODO: Luetaan tietokannasta lainaajan nimi
+        # Tietokanta-asetukset
+        dbSettings = self.currentSettings
+        plainTextPassword = self.plainTextPassword
+        dbSettings['password'] = plainTextPassword # Vaidetaan selväkieliseksi
+        # luetaan lainaajan tiedoista etunimi ja sukunimi
+        try:
+            # Luodaan tietokantayhteys-olio
+            dbConnection = dbOperations.DbConnection(dbSettings)
+            criteria = f"hetu = '{self.ui.ssnLineEdit.text()}'"
+            resultSet = dbConnection.filterColumsFromTable('lainaaja',['etunimi', 'sukunimi'], criteria)
+            row = resultSet[0]
+            lenderName = f'{row[0]} {row[1]}'
+            self.ui.lenderNameLabel.setText(lenderName)
+
+        except Exception as e:
+            title = 'Ajokortin lukeminen ei onnistunut'
+            text = 'Ajokortin tietoja ei löytynyt, ota yhteys henkilökuntaan'
+            detailedText = str(e)
+            self.openWarning(title, text, detailedText)
 
     # Näyttää lainauksen loput tiedot
+    @Slot()
     def setLendingData(self):
         self.ui.carInfoLabel.show()
         self.ui.dateLabel.show()
@@ -191,9 +216,52 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.okPushButton.show()
         self.ui.statusbar.showMessage('Jos tiedot ovat oikein paina OK')
         if self.soundOn:
-            sound.playWav('sounds\\saveData.WAV')
+            self.playSoundInTread('saveData.wav')
+
+        # Päivitetään auton tiedot 
+         # TODO: Luetaan tietokannasta auton perustiedot
+        # Tietokanta-asetukset
+        dbSettings = self.currentSettings
+        plainTextPassword = self.plainTextPassword
+        dbSettings['password'] = plainTextPassword # Vaidetaan selväkieliseksi
+        # luetaan lainaajan tiedoista etunimi ja sukunimi
+        try:
+            # Luodaan tietokantayhteys-olio
+            dbConnection = dbOperations.DbConnection(dbSettings)
+            criteria = f"rekisterinumero = '{self.ui.keyBarcodeLineEdit.text()}'"
+            resultSet = dbConnection.filterColumsFromTable('auto',['merkki', 'malli', 'henkilomaara'], criteria)
+            row = resultSet[0]
+            carData = f'{row[0]} {row[1]} \n {row[2]}-paikkainen'
+            self.ui.carInfoLabel.setText(carData)
+
+        except Exception as e:
+            title = 'Avaimenperän lukeminen ei onnistunut'
+            text = 'Auton tietoja ei löytynyt, ota yhteys henkilökuntaan'
+            detailedText = str(e)
+            self.openWarning(title, text, detailedText)
+        
+        try:
+            dbConnection = dbOperations.DbConnection(dbSettings)
+            timeStamp = dbConnection.getPgTimestamp()
+            rowValue = timeStamp[0]
+            columnValue = rowValue[0]
+            # Ensimmäiset 10 merkkiä on päivämäärä
+            date = columnValue[0:10]
+            # Merkit 12-17 ovat kellonaika minuuttien tarkkuudella
+            time = columnValue[11:16]
+
+            # Näytetään aikaleima käyttöliittymässä
+            self.ui.dateLabel.setText(date)
+            self.ui.timeLabel.setText(time)
+            
+        except Exception as e:
+            title = 'Aikaleiman lukeminen ei onnistunut'
+            text = 'Yhteys palvelimeen on katkennut, tee lainaus uudelleen'
+            detailedText = str(e)
+            self.openWarning(title, text, detailedText)
 
     # Tallennetaan lainauksen tiedot ja palautetaan käyttöliittymä alkutilaan
+    @Slot()
     def saveLendingData(self):
         # Save data to the database
         # Luetaan tietokanta-asetukset paikallisiin muuttujiin
@@ -214,14 +282,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.ui.statusbar.showMessage('Auton lainaustiedot tallennettiin', 5000)
             if self.soundOn:
                 sound.playWav('sounds\\lendingOk.WAV')   
+        
         except Exception as e:
             title = 'Lainaustietojen tallentaminen ei onnistu'
             text = 'Ajokorttin tai auton tiedot virheelliset, ota yhteys henkilökuntaan!'
             detailedText = str(e)
             self.openWarning(title, text, detailedText)
+
+        if self.soundOn:
+            self.playSoundInTread('lendingOK.wav')
         
 
     # Näytetään palautukseen liittyvät kentät ja kuvat
+    @Slot()
     def activateReturnCar(self):
         self.ui.statusFrame.hide()
         self.ui.takeCarPushButton.hide()
@@ -235,6 +308,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             sound.play('sounds\\readKey.WAV')
 
     # Tallennetaan palautuksen tiedot tietokantaan ja palautetaan UI alkutilaan
+    @Slot()
     def saveReturnData(self):
         self.ui.statusbar.showMessage('Auto palautettu')
         self.setInitialElements()
@@ -249,12 +323,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.soundOn = False
     
     # Poistetaan mykistys
+    @Slot()
     def unmute(self):
         self.ui.soundOffPushButton.show()
         self.ui.soundOnPushButton.hide()
         self.ui.statusbar.showMessage('Äänet käytössä')
         self.soundOn = True
     
+    @Slot()
     def goBack(self):
         self.setInitialElements()
         self.ui.statusbar.showMessage('Toiminto peruutettiin', 5000)
