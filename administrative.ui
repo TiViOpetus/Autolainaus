@@ -515,19 +515,6 @@ color: rgb(255, 255, 255);</string>
       <column/>
       <column/>
      </widget>
-     <widget class="QLabel" name="vehicleListLabel">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>220</y>
-        <width>101</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Autoluettelo</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="openPicturePushButton">
       <property name="geometry">
        <rect>
@@ -556,17 +543,23 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="vehiclePictureLabel">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>0</y>
-        <width>331</width>
+        <x>440</x>
+        <y>10</y>
+        <width>281</width>
         <height>211</height>
        </rect>
       </property>
       <property name="frameShape">
-       <enum>QFrame::Shape::Box</enum>
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
       <property name="text">
-       <string>Auton kuva</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>uiPictures/noPicture.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
