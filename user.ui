@@ -45,7 +45,7 @@ color: rgb(32, 75, 70);</string>
      <string/>
     </property>
     <property name="echoMode">
-     <enum>QLineEdit::EchoMode::NoEcho</enum>
+     <enum>QLineEdit::EchoMode::Password</enum>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -512,8 +512,7 @@ color: rgb(255, 255, 255);</string>
       <bool>true</bool>
      </property>
      <property name="plainText">
-      <string>XSE-778 Toyota BZ4X 5 henkilöä
-XYZ-123 VW Transtporter 3 henkilöä</string>
+      <string/>
      </property>
      <property name="backgroundVisible">
       <bool>false</bool>

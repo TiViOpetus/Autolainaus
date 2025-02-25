@@ -16,11 +16,11 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QHeaderView,
-    QLabel, QLineEdit, QMainWindow, QMenu,
-    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
-    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFrame,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QMenu, QMenuBar, QPushButton, QSizePolicy,
+    QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -159,7 +159,7 @@ class Ui_MainWindow(object):
         self.vehicleTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.layoutWidget2 = QWidget(self.vehicleTab)
         self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.layoutWidget2.setGeometry(QRect(10, 0, 101, 151))
+        self.layoutWidget2.setGeometry(QRect(10, 0, 101, 231))
         self.vehicleLabelsVerticalLayout = QVBoxLayout(self.layoutWidget2)
         self.vehicleLabelsVerticalLayout.setObjectName(u"vehicleLabelsVerticalLayout")
         self.vehicleLabelsVerticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -193,9 +193,19 @@ class Ui_MainWindow(object):
 
         self.vehicleLabelsVerticalLayout.addWidget(self.capacityLabel)
 
+        self.vehicleTypeLabel = QLabel(self.layoutWidget2)
+        self.vehicleTypeLabel.setObjectName(u"vehicleTypeLabel")
+
+        self.vehicleLabelsVerticalLayout.addWidget(self.vehicleTypeLabel)
+
+        self.vehicleOwnerLabel = QLabel(self.layoutWidget2)
+        self.vehicleOwnerLabel.setObjectName(u"vehicleOwnerLabel")
+
+        self.vehicleLabelsVerticalLayout.addWidget(self.vehicleOwnerLabel)
+
         self.layoutWidget_2 = QWidget(self.vehicleTab)
         self.layoutWidget_2.setObjectName(u"layoutWidget_2")
-        self.layoutWidget_2.setGeometry(QRect(120, 0, 169, 156))
+        self.layoutWidget_2.setGeometry(QRect(120, 0, 169, 231))
         self.vehicleInputsVerticalLayout = QVBoxLayout(self.layoutWidget_2)
         self.vehicleInputsVerticalLayout.setObjectName(u"vehicleInputsVerticalLayout")
         self.vehicleInputsVerticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -229,33 +239,55 @@ class Ui_MainWindow(object):
 
         self.vehicleInputsVerticalLayout.addWidget(self.capacityLineEdit)
 
+        self.vehicleTypeComboBox = QComboBox(self.layoutWidget_2)
+        self.vehicleTypeComboBox.setObjectName(u"vehicleTypeComboBox")
+        self.vehicleTypeComboBox.setFont(font2)
+
+        self.vehicleInputsVerticalLayout.addWidget(self.vehicleTypeComboBox)
+
+        self.vehicleOwnerLineEdit = QLineEdit(self.layoutWidget_2)
+        self.vehicleOwnerLineEdit.setObjectName(u"vehicleOwnerLineEdit")
+
+        self.vehicleInputsVerticalLayout.addWidget(self.vehicleOwnerLineEdit)
+
         self.saveVehiclePushButton = QPushButton(self.vehicleTab)
         self.saveVehiclePushButton.setObjectName(u"saveVehiclePushButton")
-        self.saveVehiclePushButton.setGeometry(QRect(300, 120, 91, 23))
+        self.saveVehiclePushButton.setGeometry(QRect(300, 200, 101, 25))
         self.saveVehiclePushButton.setFont(font1)
         self.saveVehiclePushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.saveVehiclePushButton.setStyleSheet(u"background-color: rgb(57, 136, 220);\n"
 "color: rgb(255, 255, 255);")
         self.printBarcodePushButton = QPushButton(self.vehicleTab)
         self.printBarcodePushButton.setObjectName(u"printBarcodePushButton")
-        self.printBarcodePushButton.setGeometry(QRect(300, 90, 91, 23))
+        self.printBarcodePushButton.setGeometry(QRect(300, 0, 101, 25))
         self.printBarcodePushButton.setFont(font1)
         self.printBarcodePushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.printBarcodePushButton.setStyleSheet(u"background-color: rgb(220, 162, 25);\n"
 "color: rgb(255, 255, 255);")
         self.vehicleCatalogTableWidget = QTableWidget(self.vehicleTab)
-        if (self.vehicleCatalogTableWidget.columnCount() < 5):
-            self.vehicleCatalogTableWidget.setColumnCount(5)
-        if (self.vehicleCatalogTableWidget.rowCount() < 10):
-            self.vehicleCatalogTableWidget.setRowCount(10)
+        if (self.vehicleCatalogTableWidget.columnCount() < 7):
+            self.vehicleCatalogTableWidget.setColumnCount(7)
+        if (self.vehicleCatalogTableWidget.rowCount() < 8):
+            self.vehicleCatalogTableWidget.setRowCount(8)
         self.vehicleCatalogTableWidget.setObjectName(u"vehicleCatalogTableWidget")
-        self.vehicleCatalogTableWidget.setGeometry(QRect(10, 190, 601, 321))
+        self.vehicleCatalogTableWidget.setGeometry(QRect(10, 240, 731, 271))
         self.vehicleCatalogTableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.vehicleCatalogTableWidget.setRowCount(10)
-        self.vehicleCatalogTableWidget.setColumnCount(5)
+        self.vehicleCatalogTableWidget.setRowCount(8)
+        self.vehicleCatalogTableWidget.setColumnCount(7)
         self.vehicleListLabel = QLabel(self.vehicleTab)
         self.vehicleListLabel.setObjectName(u"vehicleListLabel")
-        self.vehicleListLabel.setGeometry(QRect(10, 170, 101, 16))
+        self.vehicleListLabel.setGeometry(QRect(530, 220, 101, 16))
+        self.openPicturePushButton = QPushButton(self.vehicleTab)
+        self.openPicturePushButton.setObjectName(u"openPicturePushButton")
+        self.openPicturePushButton.setGeometry(QRect(301, 90, 101, 51))
+        self.openPicturePushButton.setStyleSheet(u"background-color: rgb(85, 170, 127);")
+        icon1 = QIcon(QIcon.fromTheme(u"camera-photo"))
+        self.openPicturePushButton.setIcon(icon1)
+        self.openPicturePushButton.setIconSize(QSize(24, 24))
+        self.vehiclePictureLabel = QLabel(self.vehicleTab)
+        self.vehiclePictureLabel.setObjectName(u"vehiclePictureLabel")
+        self.vehiclePictureLabel.setGeometry(QRect(410, 0, 331, 211))
+        self.vehiclePictureLabel.setFrameShape(QFrame.Shape.Box)
         self.tabWidget.addTab(self.vehicleTab, "")
         self.groupsTab = QWidget()
         self.groupsTab.setObjectName(u"groupsTab")
@@ -384,7 +416,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -409,9 +441,13 @@ class Ui_MainWindow(object):
         self.modelLabel.setText(QCoreApplication.translate("MainWindow", u"Malli", None))
         self.modelYearLabel.setText(QCoreApplication.translate("MainWindow", u"Vuosimalli", None))
         self.capacityLabel.setText(QCoreApplication.translate("MainWindow", u"Henkil\u00f6m\u00e4\u00e4r\u00e4", None))
+        self.vehicleTypeLabel.setText(QCoreApplication.translate("MainWindow", u"Ajoneuvotyyppi", None))
+        self.vehicleOwnerLabel.setText(QCoreApplication.translate("MainWindow", u"Vastuuhenkil\u00f6", None))
         self.saveVehiclePushButton.setText(QCoreApplication.translate("MainWindow", u"Tallenna", None))
         self.printBarcodePushButton.setText(QCoreApplication.translate("MainWindow", u"Viivakoodi", None))
         self.vehicleListLabel.setText(QCoreApplication.translate("MainWindow", u"Autoluettelo", None))
+        self.openPicturePushButton.setText("")
+        self.vehiclePictureLabel.setText(QCoreApplication.translate("MainWindow", u"Auton kuva", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.vehicleTab), QCoreApplication.translate("MainWindow", u"Autot", None))
         self.saveGroupPushButton.setText(QCoreApplication.translate("MainWindow", u"Tallenna", None))
         self.savedGroupsLabel.setText(QCoreApplication.translate("MainWindow", u"Tallennetut ryhm\u00e4t", None))

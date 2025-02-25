@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
         self.ssnLineEdit.setFont(font)
         self.ssnLineEdit.setStyleSheet(u"background-color: rgb(255, 255, 127);\n"
 "color: rgb(32, 75, 70);")
-        self.ssnLineEdit.setEchoMode(QLineEdit.EchoMode.NoEcho)
+        self.ssnLineEdit.setEchoMode(QLineEdit.EchoMode.Password)
         self.ssnLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.ssnLineEdit.setClearButtonEnabled(True)
         self.keyBarcodeLineEdit = QLineEdit(self.centralwidget)
@@ -319,8 +319,7 @@ class Ui_MainWindow(object):
         self.okPushButton.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.keyReturnBarcodeLineEdit.setText("")
         self.keyReturnBarcodeLineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Lue avain", None))
-        self.availablePlainTextEdit.setPlainText(QCoreApplication.translate("MainWindow", u"XSE-778 Toyota BZ4X 5 henkil\u00f6\u00e4\n"
-"XYZ-123 VW Transtporter 3 henkil\u00f6\u00e4", None))
+        self.availablePlainTextEdit.setPlainText("")
         self.inUsePlainTextEdit.setPlainText(QCoreApplication.translate("MainWindow", u"AM-15 Renault Megane 5 henkil\u00f6\u00e4", None))
         self.availableLabel.setText(QCoreApplication.translate("MainWindow", u"VAPAANA", None))
         self.inUseLabel.setText(QCoreApplication.translate("MainWindow", u"AJOSSA", None))
