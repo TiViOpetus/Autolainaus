@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 585)
+        MainWindow.resize(1009, 585)
         icon = QIcon(QIcon.fromTheme(u"preferences-desktop-accessibility"))
         MainWindow.setWindowIcon(icon)
         self.actionMuokkaa = QAction(MainWindow)
@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(0, 0, 783, 551))
+        self.tabWidget.setGeometry(QRect(0, 0, 971, 551))
         font = QFont()
         font.setPointSize(10)
         self.tabWidget.setFont(font)
@@ -48,12 +48,12 @@ class Ui_MainWindow(object):
         self.registeredPersonsTableWidget = QTableWidget(self.lenderTab)
         if (self.registeredPersonsTableWidget.columnCount() < 6):
             self.registeredPersonsTableWidget.setColumnCount(6)
-        if (self.registeredPersonsTableWidget.rowCount() < 10):
-            self.registeredPersonsTableWidget.setRowCount(10)
+        if (self.registeredPersonsTableWidget.rowCount() < 10000):
+            self.registeredPersonsTableWidget.setRowCount(10000)
         self.registeredPersonsTableWidget.setObjectName(u"registeredPersonsTableWidget")
-        self.registeredPersonsTableWidget.setGeometry(QRect(20, 240, 641, 241))
+        self.registeredPersonsTableWidget.setGeometry(QRect(20, 240, 931, 241))
         self.registeredPersonsTableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
-        self.registeredPersonsTableWidget.setRowCount(10)
+        self.registeredPersonsTableWidget.setRowCount(10000)
         self.registeredPersonsTableWidget.setColumnCount(6)
         self.registeredPersonsLabel = QLabel(self.lenderTab)
         self.registeredPersonsLabel.setObjectName(u"registeredPersonsLabel")
@@ -153,6 +153,13 @@ class Ui_MainWindow(object):
 
         self.studentLabelsVerticalLayout.addWidget(self.emailLabel)
 
+        self.deletePersonPushButton = QPushButton(self.lenderTab)
+        self.deletePersonPushButton.setObjectName(u"deletePersonPushButton")
+        self.deletePersonPushButton.setGeometry(QRect(310, 20, 71, 23))
+        self.deletePersonPushButton.setFont(font1)
+        self.deletePersonPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.deletePersonPushButton.setStyleSheet(u"background-color: rgb(255, 0, 0);\n"
+"color: rgb(255, 255, 255);")
         self.tabWidget.addTab(self.lenderTab, "")
         self.vehicleTab = QWidget()
         self.vehicleTab.setObjectName(u"vehicleTab")
@@ -362,6 +369,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.responsiblePLabel_2)
 
+        self.deleteGroupPushButton = QPushButton(self.groupsTab)
+        self.deleteGroupPushButton.setObjectName(u"deleteGroupPushButton")
+        self.deleteGroupPushButton.setGeometry(QRect(300, 20, 81, 23))
+        self.deleteGroupPushButton.setFont(font1)
+        self.deleteGroupPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.deleteGroupPushButton.setStyleSheet(u"background-color: rgb(255, 0, 0);\n"
+"color: rgb(255, 255, 255);")
         self.tabWidget.addTab(self.groupsTab, "")
         self.reportsTab = QWidget()
         self.reportsTab.setObjectName(u"reportsTab")
@@ -401,16 +415,16 @@ class Ui_MainWindow(object):
         self.printReportPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.printReportPushButton.setStyleSheet(u"background-color: rgb(57, 136, 220);\n"
 "color: rgb(255, 255, 255);")
-        self.tableWidget = QTableWidget(self.reportsTab)
-        if (self.tableWidget.columnCount() < 6):
-            self.tableWidget.setColumnCount(6)
-        if (self.tableWidget.rowCount() < 22):
-            self.tableWidget.setRowCount(22)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(20, 160, 641, 321))
-        self.tableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.tableWidget.setRowCount(22)
-        self.tableWidget.setColumnCount(6)
+        self.diaryTableWidget = QTableWidget(self.reportsTab)
+        if (self.diaryTableWidget.columnCount() < 8):
+            self.diaryTableWidget.setColumnCount(8)
+        if (self.diaryTableWidget.rowCount() < 10000):
+            self.diaryTableWidget.setRowCount(10000)
+        self.diaryTableWidget.setObjectName(u"diaryTableWidget")
+        self.diaryTableWidget.setGeometry(QRect(20, 160, 861, 321))
+        self.diaryTableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.diaryTableWidget.setRowCount(10000)
+        self.diaryTableWidget.setColumnCount(8)
         self.previewLabel = QLabel(self.reportsTab)
         self.previewLabel.setObjectName(u"previewLabel")
         self.previewLabel.setGeometry(QRect(20, 140, 61, 16))
@@ -418,7 +432,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 33))
+        self.menubar.setGeometry(QRect(0, 0, 1009, 33))
         self.menuAsetukset = QMenu(self.menubar)
         self.menuAsetukset.setObjectName(u"menuAsetukset")
         MainWindow.setMenuBar(self.menubar)
@@ -451,6 +465,7 @@ class Ui_MainWindow(object):
         self.groupLabel.setText(QCoreApplication.translate("MainWindow", u"Ryhm\u00e4", None))
         self.vehicleClassLabel.setText(QCoreApplication.translate("MainWindow", u"Ajokorttiluokka", None))
         self.emailLabel.setText(QCoreApplication.translate("MainWindow", u"S\u00e4hk\u00f6posti", None))
+        self.deletePersonPushButton.setText(QCoreApplication.translate("MainWindow", u"Poista", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.lenderTab), QCoreApplication.translate("MainWindow", u"Lainaajat", None))
         self.numberPlateLabel.setText(QCoreApplication.translate("MainWindow", u"Rekisterinumero", None))
         self.manufacturerLabel.setText(QCoreApplication.translate("MainWindow", u"Merkki", None))
@@ -469,7 +484,9 @@ class Ui_MainWindow(object):
         self.savedGroupsLabel.setText(QCoreApplication.translate("MainWindow", u"Tallennetut ryhm\u00e4t", None))
         self.groupNameLabel.setText(QCoreApplication.translate("MainWindow", u"Ryhm\u00e4n nimi", None))
         self.responsiblePLabel_2.setText(QCoreApplication.translate("MainWindow", u"Vastuuhenkil\u00f6", None))
+        self.deleteGroupPushButton.setText(QCoreApplication.translate("MainWindow", u"Poista", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.groupsTab), QCoreApplication.translate("MainWindow", u"Ryhm\u00e4t", None))
+        self.reportTypecomboBox.setCurrentText("")
         self.reportTypeLabel.setText(QCoreApplication.translate("MainWindow", u"Raportti", None))
         self.beginingLabel.setText(QCoreApplication.translate("MainWindow", u"Alkaa", None))
         self.endingLabel.setText(QCoreApplication.translate("MainWindow", u"P\u00e4\u00e4ttyy", None))
