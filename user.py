@@ -10,7 +10,7 @@ import json # JSON-tiedostojen käsittely
 
 from PySide6 import QtWidgets # Qt-vimpaimet
 from PySide6.QtCore import QThreadPool, Slot, Qt # Säikeistys, slot-dekoraattori ja Qt
-from PySide6.QtGui import (QCursor) # Ohjelmalliset kursorin muutokset
+from PySide6.QtGui import QPixmap, QCursor # Kuvan luku ja kursorin muutokset
 
 from lendingModules import sound # Äänitoiminnot
 from lendingModules import dbOperations # Tietokantatoiminnot
@@ -198,7 +198,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.ui.soundCheckBox.isChecked():
             self.playSoundInTread('readKey.wav')
 
-        # TODO: Luetaan tietokannasta lainaajan nimi
+        # Luetaan tietokannasta lainaajan nimi
         # Tietokanta-asetukset
         dbSettings = self.currentSettings
         plainTextPassword = self.plainTextPassword
@@ -234,12 +234,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.playSoundInTread('saveData.wav')
 
         # Päivitetään auton tiedot 
-         # TODO: Luetaan tietokannasta auton perustiedot
+        
         # Tietokanta-asetukset
         dbSettings = self.currentSettings
         plainTextPassword = self.plainTextPassword
         dbSettings['password'] = plainTextPassword # Vaidetaan selväkieliseksi
-        # luetaan lainaajan tiedoista etunimi ja sukunimi
+
+        # luetaan auton tiedoista merkki, malli ja henkilömäärä
         try:
             # Luodaan tietokantayhteys-olio
             dbConnection = dbOperations.DbConnection(dbSettings)
@@ -247,16 +248,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             resultSet = dbConnection.filterColumsFromTable('vapaana',['merkki', 'malli', 'henkilomaara'], criteria)
             row = resultSet[0]
             carData = f'{row[0]} {row[1]} \n {row[2]}-paikkainen'
-            print('Auton tiedot', carData)
             self.ui.carInfoLabel.setText(carData)
 
         except Exception as e:
             title = 'Auton lainaaminen ei ole mahdollista'
             text = 'Auton palautus edellisestä ajosta on tekemättä, ota yhteys henkilökuntaan'
             detailedText = str(e)
+
             
-            # TODO: Muuta kursorin muoto
+            # Muuta kursorin muoto
             self.ui.okPushButton.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+
             # Otetaan painike pois käytöstä, muuttaa kursorin oletuskursoriksi
             self.ui.okPushButton.setDisabled(True)
             self.openWarning(title, text, detailedText)
@@ -278,6 +280,30 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception as e:
             title = 'Aikaleiman lukeminen ei onnistunut'
             text = 'Yhteys palvelimeen on katkennut, tee lainaus uudelleen'
+            detailedText = str(e)
+            self.openWarning(title, text, detailedText)
+
+        try:
+            # Luodaan tietokantayhteys-olio
+            dbConnection = dbOperations.DbConnection(dbSettings)
+            criteria = f"rekisterinumero = '{self.ui.keyBarcodeLineEdit.text()}'"
+
+            # Haetaan auton kuva auto-taulusta
+            resultSet = dbConnection.filterColumsFromTable('auto', ['kuva'], criteria)
+            row = resultSet[0]
+            picture = row[0] # PNG tai JPG kuva tietokannasta
+           
+            # Write the binary data to a file to store png or jpeg data
+            with open('currentCar.png', 'wb') as temporaryFile: 
+                temporaryFile.write(picture)
+
+            # Create a pixmap by reading the file and set label    
+            pixmap = QPixmap('currentCar.png')
+            self.ui.vehiclePictureLabel.setPixmap(pixmap)
+
+        except Exception as e:
+            title = 'Auton kuvan lataaminen ei onnistunut'
+            text = 'Jos mitään tietoja ei tullut näkyviin, ota yhteys henkilökuntaan'
             detailedText = str(e)
             self.openWarning(title, text, detailedText)
 
