@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(10)
         self.tabWidget.setFont(font)
-        self.tabWidget.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.tabWidget.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.lenderTab = QWidget()
         self.lenderTab.setObjectName(u"lenderTab")
         self.lenderTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
             self.registeredPersonsTableWidget.setRowCount(10)
         self.registeredPersonsTableWidget.setObjectName(u"registeredPersonsTableWidget")
         self.registeredPersonsTableWidget.setGeometry(QRect(20, 240, 641, 241))
-        self.registeredPersonsTableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.registeredPersonsTableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.registeredPersonsTableWidget.setRowCount(10)
         self.registeredPersonsTableWidget.setColumnCount(6)
         self.registeredPersonsLabel = QLabel(self.lenderTab)
@@ -212,30 +212,35 @@ class Ui_MainWindow(object):
         self.numberPlateLineEdit = QLineEdit(self.layoutWidget_2)
         self.numberPlateLineEdit.setObjectName(u"numberPlateLineEdit")
         self.numberPlateLineEdit.setFont(font2)
+        self.numberPlateLineEdit.setClearButtonEnabled(True)
 
         self.vehicleInputsVerticalLayout.addWidget(self.numberPlateLineEdit)
 
         self.manufacturerLineEdit = QLineEdit(self.layoutWidget_2)
         self.manufacturerLineEdit.setObjectName(u"manufacturerLineEdit")
         self.manufacturerLineEdit.setFont(font2)
+        self.manufacturerLineEdit.setClearButtonEnabled(True)
 
         self.vehicleInputsVerticalLayout.addWidget(self.manufacturerLineEdit)
 
         self.modelLineEdit = QLineEdit(self.layoutWidget_2)
         self.modelLineEdit.setObjectName(u"modelLineEdit")
         self.modelLineEdit.setFont(font2)
+        self.modelLineEdit.setClearButtonEnabled(True)
 
         self.vehicleInputsVerticalLayout.addWidget(self.modelLineEdit)
 
         self.modelYearLineEdit = QLineEdit(self.layoutWidget_2)
         self.modelYearLineEdit.setObjectName(u"modelYearLineEdit")
         self.modelYearLineEdit.setFont(font2)
+        self.modelYearLineEdit.setClearButtonEnabled(True)
 
         self.vehicleInputsVerticalLayout.addWidget(self.modelYearLineEdit)
 
         self.capacityLineEdit = QLineEdit(self.layoutWidget_2)
         self.capacityLineEdit.setObjectName(u"capacityLineEdit")
         self.capacityLineEdit.setFont(font2)
+        self.capacityLineEdit.setClearButtonEnabled(True)
 
         self.vehicleInputsVerticalLayout.addWidget(self.capacityLineEdit)
 
@@ -247,6 +252,7 @@ class Ui_MainWindow(object):
 
         self.vehicleOwnerLineEdit = QLineEdit(self.layoutWidget_2)
         self.vehicleOwnerLineEdit.setObjectName(u"vehicleOwnerLineEdit")
+        self.vehicleOwnerLineEdit.setClearButtonEnabled(True)
 
         self.vehicleInputsVerticalLayout.addWidget(self.vehicleOwnerLineEdit)
 
@@ -265,18 +271,21 @@ class Ui_MainWindow(object):
         self.printBarcodePushButton.setStyleSheet(u"background-color: rgb(220, 162, 25);\n"
 "color: rgb(255, 255, 255);")
         self.vehicleCatalogTableWidget = QTableWidget(self.vehicleTab)
-        if (self.vehicleCatalogTableWidget.columnCount() < 7):
-            self.vehicleCatalogTableWidget.setColumnCount(7)
-        if (self.vehicleCatalogTableWidget.rowCount() < 8):
-            self.vehicleCatalogTableWidget.setRowCount(8)
+        if (self.vehicleCatalogTableWidget.columnCount() < 8):
+            self.vehicleCatalogTableWidget.setColumnCount(8)
+        if (self.vehicleCatalogTableWidget.rowCount() < 99):
+            self.vehicleCatalogTableWidget.setRowCount(99)
         self.vehicleCatalogTableWidget.setObjectName(u"vehicleCatalogTableWidget")
         self.vehicleCatalogTableWidget.setGeometry(QRect(10, 240, 731, 271))
-        self.vehicleCatalogTableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.vehicleCatalogTableWidget.setRowCount(8)
-        self.vehicleCatalogTableWidget.setColumnCount(7)
+        self.vehicleCatalogTableWidget.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
+        self.vehicleCatalogTableWidget.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.vehicleCatalogTableWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.vehicleCatalogTableWidget.setRowCount(99)
+        self.vehicleCatalogTableWidget.setColumnCount(8)
         self.openPicturePushButton = QPushButton(self.vehicleTab)
         self.openPicturePushButton.setObjectName(u"openPicturePushButton")
         self.openPicturePushButton.setGeometry(QRect(301, 90, 101, 51))
+        self.openPicturePushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.openPicturePushButton.setStyleSheet(u"background-color: rgb(85, 170, 127);")
         icon1 = QIcon(QIcon.fromTheme(u"camera-photo"))
         self.openPicturePushButton.setIcon(icon1)
@@ -287,6 +296,13 @@ class Ui_MainWindow(object):
         self.vehiclePictureLabel.setFrameShape(QFrame.Shape.NoFrame)
         self.vehiclePictureLabel.setPixmap(QPixmap(u"uiPictures/noPicture.png"))
         self.vehiclePictureLabel.setScaledContents(True)
+        self.removeVehiclePushButton = QPushButton(self.vehicleTab)
+        self.removeVehiclePushButton.setObjectName(u"removeVehiclePushButton")
+        self.removeVehiclePushButton.setGeometry(QRect(300, 50, 101, 25))
+        self.removeVehiclePushButton.setFont(font1)
+        self.removeVehiclePushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.removeVehiclePushButton.setStyleSheet(u"background-color: rgb(255, 0, 0);\n"
+"color: rgb(255, 255, 255);")
         self.tabWidget.addTab(self.vehicleTab, "")
         self.groupsTab = QWidget()
         self.groupsTab.setObjectName(u"groupsTab")
@@ -294,6 +310,7 @@ class Ui_MainWindow(object):
         self.saveGroupPushButton.setObjectName(u"saveGroupPushButton")
         self.saveGroupPushButton.setGeometry(QRect(300, 60, 81, 23))
         self.saveGroupPushButton.setFont(font1)
+        self.saveGroupPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.saveGroupPushButton.setStyleSheet(u"background-color: rgb(57, 136, 220);\n"
 "color: rgb(255, 255, 255);")
         self.savedGroupsTableWidget = QTableWidget(self.groupsTab)
@@ -415,7 +432,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -446,6 +463,7 @@ class Ui_MainWindow(object):
         self.printBarcodePushButton.setText(QCoreApplication.translate("MainWindow", u"Viivakoodi", None))
         self.openPicturePushButton.setText("")
         self.vehiclePictureLabel.setText("")
+        self.removeVehiclePushButton.setText(QCoreApplication.translate("MainWindow", u"Poista", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.vehicleTab), QCoreApplication.translate("MainWindow", u"Autot", None))
         self.saveGroupPushButton.setText(QCoreApplication.translate("MainWindow", u"Tallenna", None))
         self.savedGroupsLabel.setText(QCoreApplication.translate("MainWindow", u"Tallennetut ryhm\u00e4t", None))
