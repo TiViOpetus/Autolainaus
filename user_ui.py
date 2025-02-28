@@ -18,8 +18,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QFrame, QLabel,
     QLineEdit, QMainWindow, QMenu, QMenuBar,
-    QPlainTextEdit, QPushButton, QSizePolicy, QStatusBar,
-    QWidget)
+    QPlainTextEdit, QPushButton, QSizePolicy, QSlider,
+    QStatusBar, QWidget)
 import userUiRescources_rc
 import userUiRescources_rc
 
@@ -257,6 +257,20 @@ class Ui_MainWindow(object):
         self.vehiclePictureLabel.setGeometry(QRect(270, 440, 341, 241))
         self.vehiclePictureLabel.setPixmap(QPixmap(u"uiPictures/OXZ915.png"))
         self.vehiclePictureLabel.setScaledContents(True)
+        self.horizontalSlider = QSlider(self.centralwidget)
+        self.horizontalSlider.setObjectName(u"horizontalSlider")
+        self.horizontalSlider.setGeometry(QRect(880, 150, 51, 22))
+        self.horizontalSlider.setMaximum(1)
+        self.horizontalSlider.setPageStep(1)
+        self.horizontalSlider.setOrientation(Qt.Orientation.Horizontal)
+        self.label = QLabel(self.centralwidget)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(810, 130, 61, 81))
+        self.label.setPixmap(QPixmap(u"uiPictures/muted.png"))
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(940, 140, 61, 71))
+        self.label_2.setPixmap(QPixmap(u"uiPictures/unmuted.png"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -334,6 +348,8 @@ class Ui_MainWindow(object):
         self.statusLabel.setText(QCoreApplication.translate("MainWindow", u"Tila", None))
         self.soundCheckBox.setText("")
         self.vehiclePictureLabel.setText("")
+        self.label.setText("")
+        self.label_2.setText("")
         self.menuTiedosto.setTitle(QCoreApplication.translate("MainWindow", u"Tiedosto", None))
         self.menuEdelliset.setTitle(QCoreApplication.translate("MainWindow", u"Edelliset", None))
     # retranslateUi
